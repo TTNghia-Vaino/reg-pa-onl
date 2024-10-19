@@ -1,1 +1,0 @@
-This folder to put the .sql script 
