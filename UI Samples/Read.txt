@@ -1,0 +1,1 @@
+This folder to put samples of UI like images or code of view if possible
