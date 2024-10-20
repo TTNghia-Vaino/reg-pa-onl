@@ -1,1 +1,15 @@
-This folder to put the .sql script 
+chia làm 2 role
+
+Role Quản lý ( lễ tân)
+- Xem ở trên web, chỉ cho phép xem, thay đổi thông tin về liên hệ được hay không ( mọi người góp ý cái này )
+
+Role người dung(chưa biết web hay mobile)
+	Tầm 3-4 màn hình
+- 1 màn hình về trang chủ, trang chính
+- 1 màn hình đăng ký khám bệnh
+- 1 màn hình thông tin cá nhân (tên, sdt, địa chỉ, email)
+- 1 màn hình thay đổi thông tin cá nhân dựa trên màn hình trên
+- 1 màn hình đổi mật khẩu
+	Phát triển them nếu có thể
+- Dùng GPT để làm trợ lý chatbot (khó, không hề dễ, phải tốn thời gian)
+
