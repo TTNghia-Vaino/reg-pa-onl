@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký khám bệnh - BookingCare</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #45c3d2;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #45c3d2;
+        }
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+        }
+        .radio-group label {
+            font-weight: normal;
+        }
+        button {
+            background-color: #45c3d2;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        button:hover {
+            background-color: #3aa8b7;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Đăng ký khám bệnh</h1>
+        <form id="appointment-form">
+            <div class="form-group">
+                <label for="fullname">Họ và tên</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Ngày sinh</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label>Giới tính</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" value="male" required> Nam
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female" required> Nữ
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="other" required> Khác
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Địa chỉ</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Lý do khám</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="department">Chuyên khoa</label>
+                <select id="department" name="department" required>
+                    <option value="">Chọn chuyên khoa</option>
+                    <option value="general">Khám tổng quát</option>
+                    <option value="cardiology">Tim mạch</option>
+                    <option value="neurology">Thần kinh</option>
+                    <option value="orthopedics">Cơ xương khớp</option>
+                    <option value="gastroenterology">Tiêu hóa</option>
+                    <option value="dermatology">Da liễu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="preferred-date">Ngày khám mong muốn</label>
+                <input type="date" id="preferred-date" name="preferred-date" required>
+            </div>
+            <button type="submit">Đăng ký khám bệnh</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Đăng ký khám bệnh thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.');
+        });
+    </script>
+</body>
+</html>
