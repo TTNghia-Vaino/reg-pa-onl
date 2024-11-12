@@ -1,3 +1,4 @@
+create database RegisterPatientOnline
 use RegisterPatientOnline
 -- Tạo bảng Tài Khoản
 CREATE TABLE TAI_KHOAN (
@@ -7,12 +8,10 @@ CREATE TABLE TAI_KHOAN (
     ROLE INT NOT NULL                      -- Vai trò (0: Bệnh Nhân, 1: Quản Lý)
 );
 
-
-
 -- Tạo bảng Quản Lý
 CREATE TABLE QUAN_LY (
     MA_QL INT PRIMARY KEY IDENTITY(1,1),   -- Khóa chính với IDENTITY
-    MA_TK INT,                              -- Khóa ngoại
+    MA_TK INT UNIQUE,                              -- Khóa ngoại
     TEN_QL VARCHAR(100) NOT NULL,          -- Tên của quản lý
     SDT VARCHAR(15),                       -- Số điện thoại
     EMAIL VARCHAR(100),                    -- Địa chỉ email
@@ -38,7 +37,6 @@ CREATE TABLE BENH_NHAN (
     DIA_CHI VARCHAR(255),                  -- Địa chỉ cư trú
     CCCD VARCHAR(15),                      -- Số căn cước công dân
     MA_BHYT VARCHAR(15) UNIQUE,                   -- Mã bảo hiểm y tế
-    NGAY_SINH VARCHAR(12),                 -- Ngày sinh
     FOREIGN KEY (MA_TK) REFERENCES TAI_KHOAN(MA_TK) ON DELETE CASCADE, -- Ràng buộc khóa ngoại
 	FOREIGN KEY (MA_BHYT) REFERENCES BAO_HIEM_Y_TE(MA_BHYT) ON DELETE SET NULL -- Ràng buộc khóa ngoại đến BAO_HIEM_Y_TE
 );
@@ -49,13 +47,18 @@ CREATE TABLE TIN_TUC (
     NGAY_DANG DATE DEFAULT GETDATE()          -- Ngày đăng tin (sử dụng GETDATE cho ngày hiện tại)
 );
 
+CREATE TABLE KHOA_KHAM_BENH(
+	MA_KHOA NVARCHAR(10) PRIMARY KEY,
+	TEN_KHOA VARCHAR(100) NOT NULL
+);
 -- Tạo bảng Đăng Ký Khám
 CREATE TABLE DANG_KY_KHAM (
     MA_DK INT PRIMARY KEY IDENTITY(1,1),     -- Khóa chính với IDENTITY
     MA_BN VARCHAR(100),                       -- Khóa ngoại đến Bệnh Nhân
     NGAY_DANG_KI DATE NOT NULL,               -- Ngày đăng ký
-    GIO_DANG_KI TIME NOT NULL,                -- Giờ đăng ký
-    KHOA VARCHAR(100) NOT NULL,               -- Khoa khám
-    PHONG_KHAM VARCHAR(100) NOT NULL,         -- Phòng khám
+    NGAY_DEN_KHAM DATE NOT NULL,                -- Giờ đăng ký
+    MA_KHOA NVARCHAR(10) NOT NULL,               -- Khoa khám
+	TRANG_THAI TEXT DEFAULT 'CHỜ XÁC NHẬN', -- CÓ 3 TRẠNG THÁI CHỜ XÁC NHẬN, ĐÃ XÁC NHẬN, ĐÃ HỦY
+	FOREIGN KEY (MA_KHOA) REFERENCES KHOA_KHAM_BENH(MA_KHOA),
     FOREIGN KEY (MA_BN) REFERENCES BENH_NHAN(MA_BN) ON DELETE CASCADE -- Ràng buộc khóa ngoại
 );
