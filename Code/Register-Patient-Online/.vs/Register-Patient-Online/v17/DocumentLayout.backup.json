@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\",
+  "WorkspaceRootPath": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\views\\dangkykham\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\views\\dangkykham\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\web\\reg-pa-onl\\code\\register-patient-online\\views\\dangkykhams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\dangkykhams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\controllers\\dangkykham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\controllers\\dangkykham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\web\\reg-pa-onl\\code\\register-patient-online\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\web\\reg-pa-onl\\code\\register-patient-online\\controllers\\dangkykhamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:controllers\\dangkykhamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\web\\reg-pa-onl\\code\\register-patient-online\\views\\dangkykhams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\dangkykhams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\DangKyKhams\\Index.cshtml",
+              "ToolTip": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Index.cshtml",
+              "RelativeToolTip": "Views\\DangKyKhams\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T15:18:48.187Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\Dangkykham\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Dangkykham\\Index.cshtml.cs",
-              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\Dangkykham\\Index.cshtml.cs",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Dangkykham\\Index.cshtml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAgAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T08:56:24.043Z",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\DangKyKhams\\Create.cshtml",
+              "ToolTip": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Create.cshtml",
+              "RelativeToolTip": "Views\\DangKyKhams\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T15:23:32.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dangkykham.cs",
-              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Controllers\\Dangkykham.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\Dangkykham.cs",
-              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Controllers\\Dangkykham.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\Dangkykham.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T15:17:56.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DangKyKhamsController.cs",
+              "DocumentMoniker": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\DangKyKhamsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DangKyKhamsController.cs",
+              "ToolTip": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\DangKyKhamsController.cs",
+              "RelativeToolTip": "Controllers\\DangKyKhamsController.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAmwEwAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T08:43:29.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-19T15:17:32.343Z"
             }
           ]
         }

@@ -10682,11 +10682,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj",
+      "projectUniqueName": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj",
       "projectName": "Register-Patient-Online",
-      "projectPath": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj",
+      "projectPath": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\obj\\",
+      "outputPath": "D:\\Web\\reg-pa-onl\\Code\\Register-Patient-Online\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
