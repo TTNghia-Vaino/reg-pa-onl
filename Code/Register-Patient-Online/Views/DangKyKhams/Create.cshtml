@@ -11,27 +11,36 @@
     <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Mã Bệnh Nhân -->
             <div class="form-group">
-                <label asp-for="MaBn" class="control-label"></label>
+                <label class="control-label">Mã Bệnh Nhân</label>
                 <select asp-for="MaBn" class="form-control" asp-items="ViewBag.MaBn"></select>
             </div>
+
+            <!-- Ngày Đăng Ký -->
             <div class="form-group">
                 <label asp-for="NgayDangKi" class="control-label"></label>
                 <input asp-for="NgayDangKi" class="form-control" />
                 <span asp-validation-for="NgayDangKi" class="text-danger"></span>
             </div>
+
+            <!-- Ngày Đến Khám -->
             <div class="form-group">
                 <label asp-for="NgayDenKham" class="control-label"></label>
                 <input asp-for="NgayDenKham" class="form-control" />
                 <span asp-validation-for="NgayDenKham" class="text-danger"></span>
             </div>
+
+            <!-- Mã Khoa -->
             <div class="form-group">
                 <label asp-for="MaKhoa" class="control-label"></label>
                 <select asp-for="MaKhoa" class="form-control" asp-items="ViewBag.MaKhoa"></select>
             </div>
-            <!-- Centered Submit Button with margin-top -->
-            <div class="form-group text-center" style="margin-top: 10px;">
-                <input type="submit" value="Đăng Ký" class="btn btn-primary" />
+
+            <!-- Nút Đăng Ký -->
+            <div class="form-group text-center" style="margin-top: 100px;">
+                <input type="submit" value="Đăng Ký" class="btn btn-primary btn-lg w-100" />
             </div>
         </form>
     </div>

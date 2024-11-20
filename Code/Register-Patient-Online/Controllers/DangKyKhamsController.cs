@@ -58,14 +58,16 @@ namespace Register_Patient_Online.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaDk,MaBn,NgayDangKi,NgayDenKham,MaKhoa,TrangThai")] DangKyKham dangKyKham)
+        public async Task<IActionResult> Create(DangKyKham dangKyKham)
         {
-            if (ModelState.IsValid)
+            if(dangKyKham != null)
             {
                 _context.Add(dangKyKham);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            }    
+
+
             ViewData["MaBn"] = new SelectList(_context.BenhNhans, "MaBn", "MaBn", dangKyKham.MaBn);
             ViewData["MaKhoa"] = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "MaKhoa", dangKyKham.MaKhoa);
             return View(dangKyKham);

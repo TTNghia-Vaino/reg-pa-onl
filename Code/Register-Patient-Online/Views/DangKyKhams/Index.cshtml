@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Register_Patient_Online.Models.DangKyKham>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh Sách Đăng Ký Khám";
 }
 
 <h1 class="text-center">DANH SÁCH ĐĂNG KÝ KHÁM</h1>
@@ -9,21 +9,11 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                Ngày đăng kí
-            </th>
-            <th>
-                Ngày đến khám
-            </th>
-            <th>
-                Trạng Thái
-            </th>
-            <th>
-                Mã Bệnh Nhân
-            </th>
-            <th>
-                Mã Khoa
-            </th>
+            <th>Ngày đăng kí</th>
+            <th>Ngày đến khám</th>
+            <th>Trạng Thái</th>
+            <th>Mã Bệnh Nhân</th>
+            <th>Mã Khoa</th>
             <th></th>
         </tr>
     </thead>
@@ -31,23 +21,13 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.NgayDangKi)</td>
+                <td>@Html.DisplayFor(modelItem => item.NgayDenKham)</td>
+                <td>@Html.DisplayFor(modelItem => item.TrangThai)</td>
+                <td>@Html.DisplayFor(modelItem => item.MaBnNavigation.MaBn)</td>
+                <td>@Html.DisplayFor(modelItem => item.MaKhoaNavigation.MaKhoa)</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.NgayDangKi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayDenKham)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TrangThai)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MaBnNavigation.MaBn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MaKhoaNavigation.MaKhoa)
-                </td>
-                <td>
-                    <!-- Removed Edit, Details, and Delete links -->
+                    
                 </td>
             </tr>
         }
@@ -59,8 +39,6 @@
         <button type="submit" class="btn btn-primary">Đăng Ký Khám</button>
     </form>
 </div>
-
-
 
 
 

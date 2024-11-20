@@ -7,6 +7,7 @@ namespace Register_Patient_Online.Models
     {
         public int MaDk { get; set; }
         public string? MaBn { get; set; }
+        
         public DateTime NgayDangKi { get; set; }
         public DateTime NgayDenKham { get; set; }
         public string MaKhoa { get; set; } = null!;
