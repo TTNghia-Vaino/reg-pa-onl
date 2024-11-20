@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\models\\registerpatientonlinecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:models\\registerpatientonlinecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\models\\baohiemyte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:models\\baohiemyte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\models\\benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:models\\benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\views\\authen\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\authen\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\git-repo\\reg-pa-onl\\code\\register-patient-online\\viewmodels\\authenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:viewmodels\\authenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +51,118 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAA1AAAA",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T01:58:17.423Z",
+              "WhenOpened": "2024-11-20T03:59:43.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RegisterPatientOnlineContext.cs",
-              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\RegisterPatientOnlineContext.cs",
-              "RelativeDocumentMoniker": "Models\\RegisterPatientOnlineContext.cs",
-              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\RegisterPatientOnlineContext.cs",
-              "RelativeToolTip": "Models\\RegisterPatientOnlineContext.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAowCcAAAA/AAAA",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-20T03:49:17.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T01:57:07.57Z",
+              "WhenOpened": "2024-11-20T01:36:31.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-20T01:34:18.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BenhNhan.cs",
+              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\BenhNhan.cs",
+              "RelativeDocumentMoniker": "Models\\BenhNhan.cs",
+              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\BenhNhan.cs",
+              "RelativeToolTip": "Models\\BenhNhan.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T01:12:16.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaoHiemYTe.cs",
+              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\BaoHiemYTe.cs",
+              "RelativeDocumentMoniker": "Models\\BaoHiemYTe.cs",
+              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\BaoHiemYTe.cs",
+              "RelativeToolTip": "Models\\BaoHiemYTe.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T01:11:12.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthenViewModel.cs",
+              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\ViewModels\\AuthenViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\AuthenViewModel.cs",
+              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\ViewModels\\AuthenViewModel.cs",
+              "RelativeToolTip": "ViewModels\\AuthenViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T00:08:44.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Authen\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Authen\\Index.cshtml",
+              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Authen\\Index.cshtml",
+              "RelativeToolTip": "Views\\Authen\\Index.cshtml",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAC4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-20T00:02:27.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthenController.cs",
+              "DocumentMoniker": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\AuthenController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthenController.cs",
+              "ToolTip": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\AuthenController.cs",
+              "RelativeToolTip": "Controllers\\AuthenController.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAIwG0AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T00:01:41.8Z",
               "EditorCaption": ""
             }
           ]
