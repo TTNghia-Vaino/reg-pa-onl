@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Register-Patient-Online")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c939f5f59e1975ecd266fa81a68e6c20999245a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2973779435745101a91a3307368ef5ed3762a73a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Register-Patient-Online")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Register-Patient-Online")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
