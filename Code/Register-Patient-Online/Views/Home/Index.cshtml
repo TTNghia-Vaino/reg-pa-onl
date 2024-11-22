@@ -1,8 +1,97 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ Bệnh Viện</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>BỆNH VIỆN SIU</h1>
+    </header>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Trang Chủ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Hỏi Đáp</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Hướng Dẫn KCB</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="row">
+            <!-- Tin Mới -->
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">TIN MỚI</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="placeholder.jpg" class="img-fluid rounded" alt="Tin Mới">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Họp Mặt Chào Mừng Ngày Nhà Giáo Việt Nam</h5>
+                                <p>
+                                    Hòa trong không khí cả nước chào mừng 42 năm ngày Nhà giáo Việt Nam (20/11/1982 – 20/11/2024), sáng ngày 20/11, bệnh viện tổ chức buổi họp mặt chúc mừng.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tin Bên Phải -->
+            <div class="col-md-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">📢 Tuyển Dụng</a>
+                    <a href="#" class="list-group-item list-group-item-action">📅 Lịch Khám Chuyên Khoa</a>
+                    <a href="#" class="list-group-item list-group-item-action">📹 Hướng Dẫn Chăm Sóc Bệnh</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- Hoạt Động -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">HOẠT ĐỘNG BỆNH VIỆN</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="placeholder.jpg" class="img-fluid rounded" alt="Hoạt Động Bệnh Viện">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tin Tức Y Khoa -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">TIN TỨC Y KHOA</h5>
+                    </div>
+                    <div class="card-body">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/dummyvideo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>© 2024 Bệnh Viện SIU. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
