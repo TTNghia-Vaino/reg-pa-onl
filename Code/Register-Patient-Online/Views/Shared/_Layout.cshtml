@@ -20,12 +20,18 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">TRANG CHỦ</a>
                         </li>
                         @if (Context.Session.GetString("UserName") != null)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Gioithieu" asp-action="Index">GIỚI THIỆU</a>
+                            </li>
+                        }
+                        @if (Context.Session.GetString("UserName") != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="TinTuc" asp-action="Index">TIN TỨC</a>
                             </li>
                         }
                         @if (Context.Session.GetString("UserName") != null)

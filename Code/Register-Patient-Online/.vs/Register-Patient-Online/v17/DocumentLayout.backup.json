@@ -1,30 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\",
+  "WorkspaceRootPath": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\views\\gioithieu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\new folder\\reg-pa-onl\\code\\register-patient-online\\views\\dangkykhams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\dangkykhams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\new folder\\reg-pa-onl\\code\\register-patient-online\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\new folder\\reg-pa-onl\\code\\register-patient-online\\views\\tintuc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\tintuc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\new folder\\reg-pa-onl\\code\\register-patient-online\\views\\gioithieu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\gioithieu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\models\\gioithieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:models\\gioithieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\controllers\\gioithieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\new folder\\reg-pa-onl\\code\\register-patient-online\\controllers\\gioithieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:controllers\\gioithieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\views\\dangkykhams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\dangkykhams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\new folder\\reg-pa-onl\\code\\register-patient-online\\controllers\\tintuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:controllers\\tintuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\new folder\\reg-pa-onl\\code\\register-patient-online\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\new folder\\reg-pa-onl\\code\\register-patient-online\\models\\gioithieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:models\\gioithieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\new folder\\reg-pa-onl\\code\\register-patient-online\\views\\dangkykhams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:views\\dangkykhams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,82 +46,117 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GioiThieu.cs",
-              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\GioiThieu.cs",
-              "RelativeDocumentMoniker": "Models\\GioiThieu.cs",
-              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\GioiThieu.cs",
-              "RelativeToolTip": "Models\\GioiThieu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T15:50:07.237Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Gioithieu\\Index.cshtml",
+              "DocumentMoniker": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\DangKyKhams\\Index.cshtml",
+              "ToolTip": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Index.cshtml",
+              "RelativeToolTip": "Views\\DangKyKhams\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-23T19:16:58.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\TinTuc\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\TinTuc\\Index.cshtml",
+              "ToolTip": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\TinTuc\\Index.cshtml",
+              "RelativeToolTip": "Views\\TinTuc\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-23T18:00:52.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TinTuc.cs",
+              "DocumentMoniker": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\TinTuc.cs",
+              "RelativeDocumentMoniker": "Controllers\\TinTuc.cs",
+              "ToolTip": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\TinTuc.cs",
+              "RelativeToolTip": "Controllers\\TinTuc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T17:54:27.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GioiThieu.cs",
+              "DocumentMoniker": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\GioiThieu.cs",
+              "RelativeDocumentMoniker": "Models\\GioiThieu.cs",
+              "ToolTip": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\GioiThieu.cs",
+              "RelativeToolTip": "Models\\GioiThieu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T15:50:07.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Gioithieu\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Gioithieu\\Index.cshtml",
-              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Gioithieu\\Index.cshtml",
+              "ToolTip": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Gioithieu\\Index.cshtml",
               "RelativeToolTip": "Views\\Gioithieu\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-23T15:47:02.539Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "GioiThieu.cs",
-              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\GioiThieu.cs",
+              "DocumentMoniker": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\GioiThieu.cs",
               "RelativeDocumentMoniker": "Controllers\\GioiThieu.cs",
-              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\GioiThieu.cs",
+              "ToolTip": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Controllers\\GioiThieu.cs",
               "RelativeToolTip": "Controllers\\GioiThieu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T15:03:28.608Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Create.cshtml",
+              "DocumentMoniker": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\DangKyKhams\\Create.cshtml",
-              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Create.cshtml",
+              "ToolTip": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\DangKyKhams\\Create.cshtml",
               "RelativeToolTip": "Views\\DangKyKhams\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-23T14:48:58.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T14:48:58.612Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-23T14:37:03.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T14:37:03.855Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\New folder\\reg-pa-onl\\Code\\Register-Patient-Online\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAcwE4AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-23T14:23:53.075Z",
               "EditorCaption": ""
