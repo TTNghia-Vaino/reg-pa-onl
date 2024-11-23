@@ -1,0 +1,65 @@
+﻿@model Register_Patient_Online.Models.DangKyKham
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center text-primary my-4">📋 ĐĂNG KÍ KHÁM BỆNH</h1>
+
+<hr class="mb-4" />
+
+<div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-12 shadow-lg p-4 rounded bg-light">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" style="display: none;"></div>
+
+            <!-- Mã Bệnh Nhân -->
+            <div class="form-group mb-4">
+                <label for="MaBn" class="form-label text-dark">Mã Bệnh Nhân</label>
+                <select asp-for="MaBn" class="form-control form-select" asp-items="ViewBag.MaBn">
+                    <option value="" disabled selected>Chọn mã bệnh nhân</option>
+                </select>
+            </div>
+
+            <!-- Ngày Đăng Ký -->
+            <div class="form-group mb-4">
+                <label asp-for="NgayDangKi" class="form-label text-dark">Ngày Đăng Ký</label>
+                <input asp-for="NgayDangKi" class="form-control" placeholder="Nhập ngày đăng ký" />
+                <span asp-validation-for="NgayDangKi" class="text-danger small"></span>
+            </div>
+
+            <!-- Ngày Đến Khám -->
+            <div class="form-group mb-4">
+                <label asp-for="NgayDenKham" class="form-label text-dark">Ngày Đến Khám</label>
+                <input asp-for="NgayDenKham" class="form-control" placeholder="Nhập ngày đến khám" />
+                <span asp-validation-for="NgayDenKham" class="text-danger small"></span>
+            </div>
+
+            <!-- Mã Khoa -->
+            <div class="form-group mb-4">
+                <label asp-for="MaKhoa" class="form-label text-dark">Mã Khoa</label>
+                <select asp-for="MaKhoa" class="form-control form-select" asp-items="ViewBag.MaKhoa">
+                    <option value="" disabled selected>Chọn mã khoa</option>
+                </select>
+            </div>
+
+            <!-- Nút Đăng Ký -->
+            <div class="form-group text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg shadow-lg w-100">
+                    <i class="fas fa-clipboard-check"></i> Đăng Ký
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a asp-action="Index" class="btn btn-outline-secondary">
+        <i class="fas fa-arrow-left"></i> Quay Lại
+    </a>
+</div>
+
+<!-- Include Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
+
