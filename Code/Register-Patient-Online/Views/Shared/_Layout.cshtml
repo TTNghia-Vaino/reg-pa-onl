@@ -22,10 +22,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (Context.Session.GetString("Role") == "1")
+                        {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="admin" asp-controller="Home" asp-action="Index">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="admin" asp-controller="Home" asp-action="Index">Quản lý</a>
                         </li>
+                        }
+
                     </ul>
+                    <div style="border: 2px solid blue; padding: 10px; border-radius: 5px;">
+                        @if (Context.Session.GetString("UserName") != null)
+                        {
+                            <span style="color: green; font-weight: bold;">
+                                Xin chào, @Context.Session.GetString("UserName")!
+                            </span>
+                            <form asp-controller="Authen" asp-action="LogOut" method="post" style="display: inline;">
+                                <button type="submit" class="btn btn-danger">Đăng xuất</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" asp-controller="Authen" asp-action="Index">Đăng nhập</a>
+                        }
+                    </div>
+
                 </div>
             </div>
         </nav>

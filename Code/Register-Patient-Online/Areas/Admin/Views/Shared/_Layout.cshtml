@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="~/Register_Patient_Online.styles.css" asp-append-version="true" />
 </head>
 <body>
+    @* Kiểm tra nếu người dùng không có role "1" thì chuyển hướng về trang chính *@
+    @if (Context.Session.GetString("Role") != "1")
+    {
+        <script>
+            window.location.href = '@Url.Action("Index", "Home", new { area = "" })';
+        </script>
+    }
+
     <!-- Header Section -->
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
@@ -26,7 +34,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="admin" asp-controller="BenhNhans" asp-action="Index">Quản lý thông tin bệnh nhân</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Patient Index</a>
+                        </li>
                     </ul>
+                    <div style="border: 2px solid blue; padding: 10px; border-radius: 5px;">
+                        @* Hiển thị thông tin người dùng nếu đã đăng nhập *@
+                        @if (Context.Session.GetString("UserName") != null)
+                        {
+                            <span style="color: green; font-weight: bold;">
+                                Xin chào, @Context.Session.GetString("UserName")!
+                            </span>
+                            <form asp-area="" asp-controller="Authen" asp-action="LogOut" method="post" style="display: inline;">
+                                <button type="submit" class="btn btn-danger">Đăng xuất</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" asp-area="" asp-controller="Authen" asp-action="Login">Đăng nhập</a>
+                        }
+                    </div>
                 </div>
             </div>
         </nav>

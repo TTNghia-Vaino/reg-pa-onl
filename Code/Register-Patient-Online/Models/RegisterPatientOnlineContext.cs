@@ -28,7 +28,7 @@ namespace Register_Patient_Online.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-KAM2OD0\\MSSQLSERVER01;Initial Catalog=RegisterPatientOnline;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+                optionsBuilder.UseSqlServer("Data Source=NGHIA\\SQLEXPRESS;Initial Catalog=RegisterPatientOnline;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
             }
         }
 
