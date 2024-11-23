@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj": {}
+    "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj": {}
   },
   "projects": {
-    "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj": {
+    "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj",
+        "projectUniqueName": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj",
         "projectName": "Register-Patient-Online",
-        "projectPath": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\obj\\",
+        "projectPath": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\Register-Patient-Online.csproj",
+        "packagesPath": "C:\\Users\\nghia\\.nuget\\packages\\",
+        "outputPath": "D:\\Git-Repo\\reg-pa-onl\\Code\\Register-Patient-Online\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -75,24 +80,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.30, 6.0.30]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.30, 6.0.30]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.30, 6.0.30]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.30, 6.0.30]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -101,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
