@@ -1,0 +1,60 @@
+﻿/* Nền mờ phủ toàn màn hình */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Nền tối */
+    z-index: 9999; /* Đảm bảo hiện trên cùng */
+    display: none; /* Ẩn modal khi chưa mở */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hộp modal giữa màn hình */
+.email-modal {
+    width: 600px;
+    max-width: 90%; /* Responsive cho màn hình nhỏ */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.3s ease-in-out; /* Hiệu ứng fadeIn */
+}
+
+/* Tạo hiệu ứng mở */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tiêu đề căn giữa và to */
+#customTitle {
+    font-size: 2rem; /* Cỡ chữ lớn hơn */
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+    color: #007bff; /* Màu chữ */
+}
+
+/* Nút đóng */
+.btn-close {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+    .btn-close:before {
+        content: "\00d7"; /* Dấu "x" */
+        color: #000;
+    }

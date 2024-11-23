@@ -1,0 +1,16 @@
+﻿@model Register_Patient_Online.Models.TinTuc
+
+<h1>Xóa Tin Tức</h1>
+
+<h3>Bạn có chắc chắn muốn xóa tin tức này?</h3>
+<div>
+    <h4>Mã Tin Tức: @Model.MaTinTuc</h4>
+    <p>Nội Dung: @Model.NoiDung</p>
+    <p>Ngày Đăng: @Model.NgayDang?.ToString("dd/MM/yyyy")</p>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaTinTuc" />
+        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index">Quay lại danh sách</a>
+    </form>
+</div>
+

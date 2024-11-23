@@ -1,0 +1,36 @@
+﻿@model Register_Patient_Online.Models.TinTuc
+
+@{
+    ViewData["Title"] = "Thêm Tin Tức Mới";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mb-4">Thêm Tin Tức Mới</h1>
+
+<!-- Form thêm tin tức -->
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label for="NoiDung" class="form-label">Nội dung</label>
+        <textarea asp-for="NoiDung" class="form-control" rows="6" placeholder="Nhập nội dung tin tức..."></textarea>
+        <span asp-validation-for="NoiDung" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="NgayDang" class="form-label">Ngày đăng</label>
+        <input asp-for="NgayDang" type="date" class="form-control" />
+        <span asp-validation-for="NgayDang" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary me-2">Lưu</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Hủy</a>
+    </div>
+</form>
+
+<!-- Sidebar navigation item (tương tự như trong Index) -->
+<li class="sidebar-item">
+    <a class="sidebar-link" asp-area="Admin" asp-controller="TinTuc" asp-action="Index" aria-expanded="false">
+        <span><i class="ti ti-news"></i></span>
+        <span class="hide-menu">Quản lý Tin Tức</span>
+    </a>
+</li>
