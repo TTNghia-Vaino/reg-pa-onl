@@ -1,0 +1,70 @@
+﻿@model Register_Patient_Online.Models.BaoHiemYTe
+
+@{
+    ViewData["Title"] = "Chỉnh Sửa Bảo Hiểm";
+}
+
+<h1>Chỉnh Sửa</h1>
+
+<h4>Bảo Hiểm Y Tế</h4>
+<hr />
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Chỉnh Sửa Thông Tin Bảo Hiểm Y Tế</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <input type="hidden" asp-for="MaBhyt" />
+
+                <div class="form-group mb-3">
+                    <label asp-for="Ten" class="form-label fw-bold">Họ và Tên</label>
+                    <input asp-for="Ten" class="form-control" />
+                    <span asp-validation-for="Ten" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="GioiTinh" class="form-label fw-bold">Giới Tính</label>
+                    <select asp-for="GioiTinh" class="form-select">
+                        <option value="1">Nam</option>
+                        <option value="0">Nữ</option>
+                    </select>
+                    <span asp-validation-for="GioiTinh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="NgayBd" class="form-label fw-bold">Ngày Bắt Đầu</label>
+                    <input asp-for="NgayBd" type="date" class="form-control" />
+                    <span asp-validation-for="NgayBd" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="NgayHh" class="form-label fw-bold">Ngày Hết Hạn</label>
+                    <input asp-for="NgayHh" type="date" class="form-control" />
+                    <span asp-validation-for="NgayHh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="NgaySinh" class="form-label fw-bold">Ngày Sinh</label>
+                    <input asp-for="NgaySinh" type="date" class="form-control" />
+                    <span asp-validation-for="NgaySinh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary px-4">Lưu</button>
+                    <a asp-action="Index" class="btn btn-secondary ms-2 px-4">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <a asp-controler="Home" asp-action="Index">Quay về Trang Chủ</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,59 @@
+﻿@model Register_Patient_Online.Models.BaoHiemYTe
+
+@{
+    ViewData["Title"] = "Chi Tiết Bảo Hiểm";
+}
+
+<h1>Chi Tiết</h1>
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Thông Tin Bảo Hiểm Y Tế</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Họ Và Tên
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Ten)
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Giới Tính
+                </dt>
+                <!--Nếu 1 là Nam, 0 là nữ-->
+                <dd class="col-sm-8">
+                    @(Model.GioiTinh == 1 ? "Nam" : "Nữ")
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Ngày Bắt Đầu
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.NgayBd)
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Ngày Hết Hạn
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.NgayHh)
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Ngày Sinh
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.NgaySinh)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MaBhyt">Chỉnh Sửa</a> |
+    <a asp-controller="Home" asp-action="Index">Quay về Trang chủ</a>
+</div>
