@@ -92,19 +92,20 @@ namespace Register_Patient_Online.Controllers
                 return NotFound();
             }
 
-            var benhNhan = await _context.BenhNhans.FindAsync(id);
+            var benhNhan = await _context.BenhNhans
+                    .Include(b => b.MaTkNavigation) // Load TaiKhoan details
+                    .Include(b => b.MaBhytNavigation) // Load BaoHiemYTes details
+                    .FirstOrDefaultAsync(m => m.MaBn == id);
             if (benhNhan == null)
             {
                 return NotFound();
             }
-            ViewData["MaBhyt"] = new SelectList(_context.BaoHiemYTes, "MaBhyt", "MaBhyt", benhNhan.MaBhyt);
-            ViewData["MaTk"] = new SelectList(_context.TaiKhoans, "MaTk", "MaTk", benhNhan.MaTk);
+
+            // No need to pass SelectList for MaBhyt since it's read-only
             return View(benhNhan);
         }
 
         // POST: BenhNhans/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("MaBn,MaTk,Hoten,Sdt,Email,DiaChi,Cccd,MaBhyt")] BenhNhan benhNhan)
@@ -132,12 +133,13 @@ namespace Register_Patient_Online.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                var username = HttpContext.Session.GetString("UserName");
+                return RedirectToAction("Details", "BenhNhans", new { username });
             }
-            ViewData["MaBhyt"] = new SelectList(_context.BaoHiemYTes, "MaBhyt", "MaBhyt", benhNhan.MaBhyt);
-            ViewData["MaTk"] = new SelectList(_context.TaiKhoans, "MaTk", "MaTk", benhNhan.MaTk);
+
             return View(benhNhan);
         }
+
 
         // GET: BenhNhans/Delete/5
         public async Task<IActionResult> Delete(string id)
