@@ -48,8 +48,7 @@ namespace Register_Patient_Online.Controllers
         // GET: DangKyKhams/Create
         public IActionResult Create()
         {
-            ViewData["MaBn"] = new SelectList(_context.BenhNhans, "MaBn", "MaBn");
-            ViewData["MaKhoa"] = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "MaKhoa");
+            ViewBag.TenKhoa = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "TenKhoa");
             return View();
         }
 
@@ -58,18 +57,15 @@ namespace Register_Patient_Online.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(DangKyKham dangKyKham)
+        public async Task<IActionResult> Create([Bind("NgayDenKham,MaKhoa,TrangThai")] DangKyKham dangKyKham)
         {
-            if (dangKyKham != null)
+            if (ModelState.IsValid)
             {
                 _context.Add(dangKyKham);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-
-
-            ViewData["MaBn"] = new SelectList(_context.BenhNhans, "MaBn", "MaBn", dangKyKham.MaBn);
-            ViewData["MaKhoa"] = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "MaKhoa", dangKyKham.MaKhoa);
+            ViewBag.TenKhoa = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "TenKhoa", dangKyKham.MaKhoa);
             return View(dangKyKham);
         }
 
@@ -86,7 +82,6 @@ namespace Register_Patient_Online.Controllers
             {
                 return NotFound();
             }
-            ViewData["MaBn"] = new SelectList(_context.BenhNhans, "MaBn", "MaBn", dangKyKham.MaBn);
             ViewData["MaKhoa"] = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "MaKhoa", dangKyKham.MaKhoa);
             return View(dangKyKham);
         }
@@ -162,14 +157,14 @@ namespace Register_Patient_Online.Controllers
             {
                 _context.DangKyKhams.Remove(dangKyKham);
             }
-
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DangKyKhamExists(int id)
         {
-            return (_context.DangKyKhams?.Any(e => e.MaDk == id)).GetValueOrDefault();
+          return (_context.DangKyKhams?.Any(e => e.MaDk == id)).GetValueOrDefault();
         }
     }
 }

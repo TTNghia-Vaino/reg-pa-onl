@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Create";
+    var user = Context.Session.GetString("UserName");
+    <!--Tim MaBn cua BenhNhan co NaTknavigation.TenDangNhap = user-->
 }
 
 <h1 class="text-center text-primary my-4">📋 ĐĂNG KÍ KHÁM BỆNH</h1>
@@ -13,21 +15,6 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="alert alert-danger" style="display: none;"></div>
 
-            <!-- Mã Bệnh Nhân -->
-            <div class="form-group mb-4">
-                <label for="MaBn" class="form-label text-dark">Mã Bệnh Nhân</label>
-                <select asp-for="MaBn" class="form-control form-select" asp-items="ViewBag.MaBn">
-                    <option value="" disabled selected>Chọn mã bệnh nhân</option>
-                </select>
-            </div>
-
-            <!-- Ngày Đăng Ký -->
-            <div class="form-group mb-4">
-                <label asp-for="NgayDangKi" class="form-label text-dark">Ngày Đăng Ký</label>
-                <input asp-for="NgayDangKi" class="form-control" placeholder="Nhập ngày đăng ký" />
-                <span asp-validation-for="NgayDangKi" class="text-danger small"></span>
-            </div>
-
             <!-- Ngày Đến Khám -->
             <div class="form-group mb-4">
                 <label asp-for="NgayDenKham" class="form-label text-dark">Ngày Đến Khám</label>
@@ -35,12 +22,13 @@
                 <span asp-validation-for="NgayDenKham" class="text-danger small"></span>
             </div>
 
-            <!-- Mã Khoa -->
+            <!-- Tên Khoa -->
             <div class="form-group mb-4">
-                <label asp-for="MaKhoa" class="form-label text-dark">Mã Khoa</label>
-                <select asp-for="MaKhoa" class="form-control form-select" asp-items="ViewBag.MaKhoa">
-                    <option value="" disabled selected>Chọn mã khoa</option>
+                <label asp-for="MaKhoa" class="form-label text-dark">Tên Khoa</label>
+                <select asp-for="MaKhoa" class="form-control form-select" asp-items="ViewBag.TenKhoa">
+                    <option value="" disabled selected>Chọn tên khoa</option>
                 </select>
+                <span asp-validation-for="MaKhoa" class="text-danger small"></span>
             </div>
 
             <!-- Nút Đăng Ký -->
@@ -61,5 +49,3 @@
 
 <!-- Include Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-
-
