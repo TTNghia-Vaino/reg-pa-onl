@@ -1,72 +1,150 @@
 ﻿@model IEnumerable<Register_Patient_Online.Models.BenhNhan>
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "_Layout";
+    ViewData["Title"] = "Danh Sách Bệnh Nhân";
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        /* Toàn bộ giao diện */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Hoten)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sdt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DiaChi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cccd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaBhytNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaTkNavigation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hoten)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sdt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiaChi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cccd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaBhytNavigation.MaBhyt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaTkNavigation.TenDangNhap)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MaBn">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MaBn">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MaBn">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .btn-create {
+            background-color: #28a745;
+        }
+
+            .btn-create:hover {
+                background-color: #218838;
+            }
+
+        /* Bảng */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e9f5ff;
+        }
+
+        .actions a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 4px;
+        }
+
+        .actions .edit {
+            background-color: #007bff;
+        }
+
+            .actions .edit:hover {
+                background-color: #0056b3;
+            }
+
+        .actions .details {
+            background-color: #17a2b8;
+        }
+
+            .actions .details:hover {
+                background-color: #138496;
+            }
+
+        .actions .delete {
+            background-color: #dc3545;
+        }
+
+            .actions .delete:hover {
+                background-color: #c82333;
+            }
+    </style>
+</head>
+<body>
+    <h1>Danh Sách Bệnh Nhân</h1>
+    <div class="container">
+        <a class="btn btn-create" asp-action="Create">Thêm Mới</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Hoten)</th>
+                    <th>@Html.DisplayNameFor(model => model.Sdt)</th>
+                    <th>@Html.DisplayNameFor(model => model.Email)</th>
+                    <th>@Html.DisplayNameFor(model => model.DiaChi)</th>
+                    <th>@Html.DisplayNameFor(model => model.Cccd)</th>
+                    <th>@Html.DisplayNameFor(model => model.MaBhytNavigation)</th>
+                    <th>@Html.DisplayNameFor(model => model.MaTkNavigation)</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Hoten)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Sdt)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DiaChi)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Cccd)</td>
+                        <td>@Html.DisplayFor(modelItem => item.MaBhytNavigation.MaBhyt)</td>
+                        <td>@Html.DisplayFor(modelItem => item.MaTkNavigation.MaTk)</td>
+                        <td class="actions">
+                            <a class="edit" asp-action="Edit" asp-route-id="@item.MaBn">Sửa</a>
+                            <a class="details" asp-action="Details" asp-route-id="@item.MaBn">Chi Tiết</a>
+                            <a class="delete" asp-action="Delete" asp-route-id="@item.MaBn">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
