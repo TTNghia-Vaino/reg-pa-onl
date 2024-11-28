@@ -1,0 +1,81 @@
+create database RegisterPatientOnline
+use RegisterPatientOnline
+-- Tạo bảng Tài Khoản
+CREATE TABLE TAI_KHOAN (
+    MA_TK INT PRIMARY KEY IDENTITY(1,1), -- Khóa chính với IDENTITY
+    TEN_DANG_NHAP NVARCHAR(50) NOT NULL UNIQUE,   -- Tên đăng nhập
+    MAT_KHAU NVARCHAR(255) NOT NULL,       -- Mật khẩu
+    ROLE INT NOT NULL                      -- Vai trò (0: Bệnh Nhân, 1: Quản Lý)
+);
+
+-- Tạo bảng Quản Lý
+CREATE TABLE QUAN_LY (
+    MA_QL INT PRIMARY KEY IDENTITY(1,1),   -- Khóa chính với IDENTITY
+    MA_TK INT UNIQUE,                              -- Khóa ngoại
+    TEN_QL NVARCHAR(100) NOT NULL,          -- Tên của quản lý
+    SDT NVARCHAR(15),                       -- Số điện thoại
+    EMAIL NVARCHAR(100),                    -- Địa chỉ email
+    FOREIGN KEY (MA_TK) REFERENCES TAI_KHOAN(MA_TK) ON DELETE CASCADE -- Ràng buộc khóa ngoại
+);
+
+-- Tạo bảng Bảo Hiểm Y Tế
+CREATE TABLE BAO_HIEM_Y_TE (
+    MA_BHYT NVARCHAR(15) PRIMARY KEY,      -- Khóa chính
+    TEN NVARCHAR(100) NOT NULL,            -- Tên bảo hiểm
+    GIOI_TINH INT NOT NULL,               -- Giới tính (0: Nữ, 1: Nam)
+    NGAY_BD DATE NOT NULL,                 -- Ngày bắt đầu
+    NGAY_HH DATE NOT NULL,                 -- Ngày hết hạn
+    NGAY_SINH DATE NOT NULL                -- Ngày sinh của người dùng
+);
+-- Tạo bảng Bệnh Nhân
+CREATE TABLE BENH_NHAN (
+    MA_BN NVARCHAR(100) PRIMARY KEY,       -- Khóa chính
+    MA_TK INT UNIQUE,                             -- Khóa ngoại
+    HOTEN NVARCHAR(255) NOT NULL,          -- Họ và tên
+    SDT NVARCHAR(15),                       -- Số điện thoại
+    EMAIL NVARCHAR(100),                    -- Địa chỉ email
+    DIA_CHI NVARCHAR(255),                  -- Địa chỉ cư trú
+    CCCD NVARCHAR(15),                      -- Số căn cước công dân
+    MA_BHYT NVARCHAR(15) UNIQUE,                   -- Mã bảo hiểm y tế
+    FOREIGN KEY (MA_TK) REFERENCES TAI_KHOAN(MA_TK) ON DELETE CASCADE, -- Ràng buộc khóa ngoại
+	FOREIGN KEY (MA_BHYT) REFERENCES BAO_HIEM_Y_TE(MA_BHYT) ON DELETE SET NULL -- Ràng buộc khóa ngoại đến BAO_HIEM_Y_TE
+);
+-- Tạo bảng Tin Tức
+CREATE TABLE TIN_TUC (
+    MA_TIN_TUC INT PRIMARY KEY IDENTITY(1,1), -- Khóa chính với IDENTITY
+    NOI_DUNG TEXT NOT NULL,                   -- Nội dung tin tức
+    NGAY_DANG DATE DEFAULT GETDATE()          -- Ngày đăng tin (sử dụng GETDATE cho ngày hiện tại)
+);
+
+CREATE TABLE KHOA_KHAM_BENH(
+	MA_KHOA NVARCHAR(10) PRIMARY KEY,
+	TEN_KHOA NVARCHAR(100) NOT NULL
+);
+-- Tạo bảng Đăng Ký Khám
+CREATE TABLE DANG_KY_KHAM (
+    MA_DK INT PRIMARY KEY IDENTITY(1,1),     -- Khóa chính với IDENTITY
+    MA_BN NVARCHAR(100),                       -- Khóa ngoại đến Bệnh Nhân
+    NGAY_DANG_KI DATE NOT NULL,               -- Ngày đăng ký
+    NGAY_DEN_KHAM DATE NOT NULL,                -- Giờ đăng ký
+    MA_KHOA NVARCHAR(10) NOT NULL,               -- Khoa khám
+	TRANG_THAI TEXT DEFAULT 'CHỜ XÁC NHẬN', -- CÓ 3 TRẠNG THÁI CHỜ XÁC NHẬN, ĐÃ XÁC NHẬN, ĐÃ HỦY
+	FOREIGN KEY (MA_KHOA) REFERENCES KHOA_KHAM_BENH(MA_KHOA),
+    FOREIGN KEY (MA_BN) REFERENCES BENH_NHAN(MA_BN) ON DELETE CASCADE -- Ràng buộc khóa ngoại
+);
+-- Tạo bảng Bác Sĩ
+CREATE TABLE BAC_SI (
+    MA_BS NVARCHAR(100) PRIMARY KEY,              -- Khóa chính
+    TEN NVARCHAR(50) NOT NULL,                    -- Tên bác sĩ
+    MA_TK INT UNIQUE,                             -- Khóa ngoại đến tài khoản
+    MA_KHOA NVARCHAR(10) NOT NULL,                -- Khóa ngoại đến Khoa Khám Bệnh
+    FOREIGN KEY (MA_TK) REFERENCES TAI_KHOAN(MA_TK) ON DELETE CASCADE,
+    FOREIGN KEY (MA_KHOA) REFERENCES KHOA_KHAM_BENH(MA_KHOA) -- Ràng buộc khóa ngoại
+);
+-- Tạo bảng Lịch Làm Việc
+CREATE TABLE LICH_LAM_VIEC (
+    MA_BS NVARCHAR(100) NOT NULL,          -- Mã bác sĩ
+    NGAY DATE NOT NULL,                    -- Ngày làm việc
+    CA_LAM_VIEC NVARCHAR(20) NOT NULL,     -- Ca làm việc (Sáng, Chiều, Tối)
+    PRIMARY KEY (MA_BS, NGAY, CA_LAM_VIEC), -- Khóa chính kết hợp
+    FOREIGN KEY (MA_BS) REFERENCES BAC_SI(MA_BS) ON DELETE CASCADE -- Khóa ngoại
+);
