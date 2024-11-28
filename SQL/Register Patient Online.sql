@@ -62,4 +62,20 @@ CREATE TABLE DANG_KY_KHAM (
 	FOREIGN KEY (MA_KHOA) REFERENCES KHOA_KHAM_BENH(MA_KHOA),
     FOREIGN KEY (MA_BN) REFERENCES BENH_NHAN(MA_BN) ON DELETE CASCADE -- Ràng buộc khóa ngoại
 );
-
+-- Tạo bảng Bác Sĩ
+CREATE TABLE BAC_SI (
+    MA_BS NVARCHAR(100) PRIMARY KEY,              -- Khóa chính
+    TEN NVARCHAR(50) NOT NULL,                    -- Tên bác sĩ
+    MA_TK INT UNIQUE,                             -- Khóa ngoại đến tài khoản
+    MA_KHOA NVARCHAR(10) NOT NULL,                -- Khóa ngoại đến Khoa Khám Bệnh
+    FOREIGN KEY (MA_TK) REFERENCES TAI_KHOAN(MA_TK) ON DELETE CASCADE,
+    FOREIGN KEY (MA_KHOA) REFERENCES KHOA_KHAM_BENH(MA_KHOA) -- Ràng buộc khóa ngoại
+);
+-- Tạo bảng Lịch Làm Việc
+CREATE TABLE LICH_LAM_VIEC (
+    MA_BS NVARCHAR(100) NOT NULL,          -- Mã bác sĩ
+    NGAY DATE NOT NULL,                    -- Ngày làm việc
+    CA_LAM_VIEC NVARCHAR(20) NOT NULL,     -- Ca làm việc (Sáng, Chiều, Tối)
+    PRIMARY KEY (MA_BS, NGAY, CA_LAM_VIEC), -- Khóa chính kết hợp
+    FOREIGN KEY (MA_BS) REFERENCES BAC_SI(MA_BS) ON DELETE CASCADE -- Khóa ngoại
+);
