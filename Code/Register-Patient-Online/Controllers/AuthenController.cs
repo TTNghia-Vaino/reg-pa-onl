@@ -1,17 +1,21 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Register_Patient_Online.ViewModels;
-
+using Register_Patient_Online.Services;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace Register_Patient_Online.Controllers
     {
         public class AuthenController : Controller
         {
             private readonly RegisterPatientOnlineContext _context;
+            private readonly IEmailService _emailService;
 
-            public AuthenController(RegisterPatientOnlineContext context)
+           public AuthenController(RegisterPatientOnlineContext context, IEmailService emailService)
             {
                 _context = context;
+                _emailService = emailService;
             }
 
             public IActionResult Index()
@@ -44,60 +48,142 @@ namespace Register_Patient_Online.Controllers
                     }
                 }
 
-            // POST: Authen/Register
-            [HttpPost]
-            public IActionResult Register(AuthenViewModel model)
+        // POST: Authen/Register
+        // POST: Authen/Register
+        [HttpPost]
+        public async Task<IActionResult> RegisterAsync(AuthenViewModel model)
+        {
+            if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
-                {
-                    TempData["RegisterError"] = "Đăng ký thất bại, vui lòng thử lại.";
-                    return RedirectToAction("Index");
-                }
+                TempData["RegisterError"] = "Đăng ký thất bại, vui lòng thử lại.";
+                return RedirectToAction("Index");
+            }
 
-                // Tạo tài khoản mới
-                var newUser = new TaiKhoan
-                {
-                    TenDangNhap = model.TenDangNhap,
-                    MatKhau = model.MatKhau,
-                };
-                var newBenhNhan = new BenhNhan
-                {
-                    Hoten = model.Hoten,
-                    Email = model.Email,
-                    Sdt = model.Sdt,
-                    DiaChi = model.DiaChi,
-                    Cccd = model.Cccd
-                };
+            // Kiểm tra tên đăng nhập đã tồn tại chưa
+            var existingUser = _context.TaiKhoans.FirstOrDefault(u => u.TenDangNhap == model.TenDangNhap);
+            if (existingUser != null)
+            {
+                TempData["RegisterError"] = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
+                return RedirectToAction("Index");
+            }
+
+            // Tạo tài khoản mới
+            var newUser = new TaiKhoan
+            {
+                TenDangNhap = model.TenDangNhap,
+                MatKhau = model.MatKhau,
+            };
+
+            // Tạo mã bệnh nhân và đảm bảo không bị trùng lặp
+            string patientCode;
+            bool isUniquePatientCode = false;
+
+            do
+            {
+                patientCode = "BN" + new Random().Next(10000, 99999).ToString();
+                isUniquePatientCode = !_context.BenhNhans.Any(b => b.MaBn == patientCode);
+            } while (!isUniquePatientCode);
+
+            var newBenhNhan = new BenhNhan
+            {
+                MaBn = patientCode,
+                Hoten = model.Hoten,
+                Email = model.Email,
+                Sdt = model.Sdt,
+                DiaChi = model.DiaChi,
+                Cccd = model.Cccd,
+
+            };
+
+            try
+            {
                 _context.TaiKhoans.Add(newUser);
+                await _context.SaveChangesAsync();
+                var newMatk = _context.TaiKhoans
+                      .Where(t => t.TenDangNhap == newUser.TenDangNhap)
+                      .Select(t => t.MaTk)
+                      .FirstOrDefault();
+                newBenhNhan.MaTk = newMatk;
                 _context.BenhNhans.Add(newBenhNhan);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
-                TempData["RegisterSuccess"] = "Đăng kí thành công! Bạn có thể đăng nhập.";
-                return RedirectToAction("Index");
+                // Gửi email thông báo
+                string subject = "Chào mừng bạn đến với hệ thống đăng ký khám bệnh";
+                string body = $"Xin chào {model.Hoten},<br><br>"
+                            + "Tài khoản của bạn đã được tạo thành công.<br>"
+                            + "Hãy đăng nhập để bắt đầu sử dụng dịch vụ.<br><br>"
+                            + "Trân trọng,<br>Bệnh viện SIU";
+
+                bool emailSent = await _emailService.SendEmailAsync(model.Email, subject, body);
+
+                if (!emailSent)
+                {
+                    TempData["EmailError"] = "Đăng ký thành công nhưng gửi email thất bại.";
+                }
+
+                TempData["RegisterSuccess"] = "Đăng ký thành công! Bạn có thể đăng nhập.";
             }
-
-            // POST: Authen/ForgotPassword
-            [HttpPost]
-            public IActionResult ForgotPassword(string Email)
+            catch (DbUpdateException ex)
             {
-                if (string.IsNullOrEmpty(Email))
+                // Xử lý lỗi trùng lặp hoặc lỗi cơ sở dữ liệu khác
+                if (ex.InnerException is SqlException sqlEx && sqlEx.Number == 2627) // 2627: UNIQUE constraint error
                 {
-                    TempData["ForgotPasswordError"] = "Email không được để trống.";
-                    return RedirectToAction("Index");
+                    TempData["RegisterError"] = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
                 }
-
-                var user = _context.BenhNhans.FirstOrDefault(u => u.Email == Email);
-                if (user == null)
+                else
                 {
-                    TempData["ForgotPasswordError"] = "Không tồn tại email.";
-                    return RedirectToAction("Index");
+                    TempData["RegisterError"] = "Đăng ký thất bại. Vui lòng thử lại.";
                 }
-
-                // Giả lập gửi email
-                TempData["ForgotPasswordSuccess"] = $"Email thay đổi mật khẩu đã được gửi đến {Email}.";
                 return RedirectToAction("Index");
             }
-            [HttpPost]
+
+            return RedirectToAction("Index");
+        }
+
+
+        // POST: Authen/ForgotPassword
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(string Email)
+        {
+            if (string.IsNullOrEmpty(Email))
+            {
+                TempData["ForgotPasswordError"] = "Email không được để trống.";
+                return RedirectToAction("Index");
+            }
+
+            // Tìm người dùng trong cơ sở dữ liệu theo email
+            var user = _context.TaiKhoans.FirstOrDefault(u => u.BenhNhan.Email == Email);
+            if (user == null)
+            {
+                TempData["ForgotPasswordError"] = "Không tồn tại email.";
+                return RedirectToAction("Index");
+            }
+
+            // Lấy mật khẩu hiện tại của người dùng
+            string currentPassword = user.MatKhau;  // Giả sử bạn lưu mật khẩu dưới dạng plain text
+
+            // Gửi email với mật khẩu hiện tại
+            string subject = "Thông tin mật khẩu của bạn";
+            string body = $"Xin chào {user.TenDangNhap},<br><br>"
+                        + "Mật khẩu hiện tại của bạn là: <strong>" + currentPassword + "</strong><br><br>"
+                        + "Trân trọng,<br>Bệnh viện SIU";
+
+            bool emailSent = await _emailService.SendEmailAsync(Email, subject, body);
+
+            if (!emailSent)
+            {
+                // Xử lý khi gửi email thất bại
+                TempData["EmailError"] = "Đã xảy ra lỗi khi gửi email.";
+            }
+            else
+            {
+                TempData["ForgotPasswordSuccess"] = $"Mật khẩu đã được gửi đến email {Email}.";
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
             public IActionResult LogOut()
             {
                 // Xóa tất cả session

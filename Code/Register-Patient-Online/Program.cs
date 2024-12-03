@@ -1,10 +1,12 @@
 ﻿global using Register_Patient_Online.Models;
+using Register_Patient_Online.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<RegisterPatientOnlineContext>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 // Add Session support
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -13,6 +15,7 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
