@@ -1,12 +1,173 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\views\\benhnhans\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\views\\benhnhans\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\models\\benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:models\\benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\views\\benhnhans\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\views\\benhnhans\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\views\\benhnhans\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\views\\benhnhans\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\views\\benhnhans\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\views\\benhnhans\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\views\\benhnhans\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\views\\benhnhans\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\areas\\admin\\controllers\\benhnhanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:areas\\admin\\controllers\\benhnhanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|d:\\reg-pa-onl\\code\\register-patient-online\\models\\registerpatientonlinecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB1E09C-25F3-4F8A-A924-534CEC2988F9}|Register-Patient-Online.csproj|solutionrelative:models\\registerpatientonlinecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Details.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\BenhNhans\\Details.cshtml",
+              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Details.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\BenhNhans\\Details.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAwwDsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T15:58:50.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T15:50:09.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\BenhNhans\\Edit.cshtml",
+              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Edit.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\BenhNhans\\Edit.cshtml",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAwwDoAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T15:49:20.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\BenhNhans\\Delete.cshtml",
+              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Delete.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\BenhNhans\\Delete.cshtml",
+              "ViewState": "AQIAACMAAAAAAAAAAAAiwEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T15:48:56.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BenhNhan.cs",
+              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\BenhNhan.cs",
+              "RelativeDocumentMoniker": "Models\\BenhNhan.cs",
+              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\BenhNhan.cs",
+              "RelativeToolTip": "Models\\BenhNhan.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAkwCAAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T15:48:13.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RegisterPatientOnlineContext.cs",
+              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\RegisterPatientOnlineContext.cs",
+              "RelativeDocumentMoniker": "Models\\RegisterPatientOnlineContext.cs",
+              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Models\\RegisterPatientOnlineContext.cs",
+              "RelativeToolTip": "Models\\RegisterPatientOnlineContext.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAcwBkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T15:47:47.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BenhNhansController.cs",
+              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Controllers\\BenhNhansController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\BenhNhansController.cs",
+              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Controllers\\BenhNhansController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\BenhNhansController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T15:46:55.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Create.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\BenhNhans\\Create.cshtml",
+              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Create.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\BenhNhans\\Create.cshtml",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAwAsAAABjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T15:33:48.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\BenhNhans\\Index.cshtml",
+              "ToolTip": "D:\\reg-pa-onl\\Code\\Register-Patient-Online\\Areas\\Admin\\Views\\BenhNhans\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\BenhNhans\\Index.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAAoAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T15:33:37.097Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

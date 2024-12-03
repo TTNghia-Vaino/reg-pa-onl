@@ -23,8 +23,7 @@ namespace Register_Patient_Online.Models
         public virtual DbSet<QuanLy> QuanLies { get; set; } = null!;
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; } = null!;
         public virtual DbSet<TinTuc> TinTucs { get; set; } = null!;
-        public virtual DbSet<LichSuKham> LichSuKhams { get; set; } = null!;
-
+   
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

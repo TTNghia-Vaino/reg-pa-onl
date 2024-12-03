@@ -1,64 +1,95 @@
 ﻿@model Register_Patient_Online.Models.BenhNhan
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Patient Details";
+    Layout = "_Layout";
 }
 
-<h1>Edit</h1>
+<div class="container mt-5">
+    <!-- Tiêu đề -->
+    <h1 class="text-primary text-center mb-4">Edit Patient Details</h1>
 
-<h4>BenhNhan</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MaBn" />
-            <div class="form-group">
-                <label asp-for="MaTk" class="control-label"></label>
-                <select asp-for="MaTk" class="form-control" asp-items="ViewBag.MaTk"></select>
-                <span asp-validation-for="MaTk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Hoten" class="control-label"></label>
-                <input asp-for="Hoten" class="form-control" />
-                <span asp-validation-for="Hoten" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sdt" class="control-label"></label>
-                <input asp-for="Sdt" class="form-control" />
-                <span asp-validation-for="Sdt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DiaChi" class="control-label"></label>
-                <input asp-for="DiaChi" class="form-control" />
-                <span asp-validation-for="DiaChi" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cccd" class="control-label"></label>
-                <input asp-for="Cccd" class="form-control" />
-                <span asp-validation-for="Cccd" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MaBhyt" class="control-label"></label>
-                <select asp-for="MaBhyt" class="form-control" asp-items="ViewBag.MaBhyt"></select>
-                <span asp-validation-for="MaBhyt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <!-- Form chỉnh sửa bệnh nhân -->
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Edit Details</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                <input type="hidden" asp-for="MaBn" />
+
+                <dl class="row">
+                    <!-- Họ tên -->
+                    <dt class="col-sm-4 font-weight-bold">Name:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="Hoten" class="form-control" placeholder="Enter full name" />
+                        <span asp-validation-for="Hoten" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Số điện thoại -->
+                    <dt class="col-sm-4 font-weight-bold">Phone:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="Sdt" class="form-control" placeholder="Enter phone number" />
+                        <span asp-validation-for="Sdt" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Email -->
+                    <dt class="col-sm-4 font-weight-bold">Email:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="Email" class="form-control" placeholder="Enter email address" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Địa chỉ -->
+                    <dt class="col-sm-4 font-weight-bold">Address:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="DiaChi" class="form-control" placeholder="Enter address" />
+                        <span asp-validation-for="DiaChi" class="text-danger"></span>
+                    </dd>
+
+                    <!-- CCCD -->
+                    <dt class="col-sm-4 font-weight-bold">Citizen ID:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="Cccd" class="form-control" placeholder="Enter citizen ID" />
+                        <span asp-validation-for="Cccd" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Mã BHYT -->
+                    <dt class="col-sm-4 font-weight-bold">Insurance Code:</dt>
+                    <dd class="col-sm-8">
+                        <select asp-for="MaBhyt" class="form-control" asp-items="ViewBag.MaBhyt">
+                            <option value="">Select an insurance code...</option>
+                        </select>
+                        <span asp-validation-for="MaBhyt" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Tài khoản -->
+                    <dt class="col-sm-4 font-weight-bold">Account Name:</dt>
+                    <dd class="col-sm-8">
+                        <select asp-for="MaTk" class="form-control" asp-items="ViewBag.MaTk">
+                            <option value="">Select an account...</option>
+                        </select>
+                        <span asp-validation-for="MaTk" class="text-danger"></span>
+                    </dd>
+                </dl>
+
+                <!-- Nút hành động -->
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to List
+                    </a>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

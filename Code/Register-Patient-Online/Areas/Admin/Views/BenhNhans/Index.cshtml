@@ -6,7 +6,7 @@
 }
 
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 class="fw-bold text-primary">Danh Sách Bệnh Nhân</h1>
+    <h1 class="fw-bold text-primary">Patient List</h1>
     <a asp-action="Create" class="btn btn-success">+ Create New</a>
 </div>
 
@@ -53,8 +53,6 @@
                                 <a asp-action="Edit" asp-route-id="@item.MaBn" class="btn btn-sm btn-primary">Edit</a>
                                 <a asp-action="Details" asp-route-id="@item.MaBn" class="btn btn-sm btn-info">Details</a>
                                 <a asp-action="Delete" asp-route-id="@item.MaBn" class="btn btn-sm btn-danger">Delete</a>
-                                <a asp-action="History" asp-route-id="@item.MaBn" class="btn btn-sm btn-warning">View History</a>
-
                             </td>
                 </tr>
             }

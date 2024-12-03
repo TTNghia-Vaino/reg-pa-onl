@@ -34,10 +34,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmVuaE5oYW5zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/reg-pa-onl/Code/Register-Patient-Online/Areas/Admin/Views/BenhNhans/History.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmVuaE5oYW5zXEhpc3RvcnkuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/reg-pa-onl/Code/Register-Patient-Online/Areas/Admin/Views/BenhNhans/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmVuaE5oYW5zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

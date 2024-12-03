@@ -14,28 +14,29 @@ namespace Register_Patient_Online.Models
         public string MaBn { get; set; } = null!;
         public int? MaTk { get; set; }
 
-        [Display(Name = "Họ Tên")]
+        [Display(Name = "Full Name")]
         public string Hoten { get; set; } = null!;
 
 
-        [Display(Name = "Số Điện Thoại")]
+        [Display(Name = "Phone Number")]
         public string? Sdt { get; set; }
         public string? Email { get; set; }
 
-        [Display(Name = "Địa Chỉ")]
+        [Display(Name = "Address")]
         public string? DiaChi { get; set; }
 
         [Display(Name = "CCCD")]
         public string? Cccd { get; set; }
-        public string? MaBhyt { get; set; }
 
-        [Display(Name = "Mã BHYT")]
+        [Display(Name = "Insurance Code")]
+        public string? MaBhyt { get; set; }
+      
         public virtual BaoHiemYTe? MaBhytNavigation { get; set; }
 
-        [Display(Name = "Tài Khoản")]
+        [Display(Name = "Account")]
         public virtual TaiKhoan? MaTkNavigation { get; set; }
         public virtual ICollection<DangKyKham> DangKyKhams { get; set; }
-        public virtual ICollection<LichSuKham> LichSuKhams { get; set; } = new HashSet<LichSuKham>();
+
     }
    
 

@@ -1,61 +1,59 @@
 ﻿@model Register_Patient_Online.Models.BenhNhan
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Patient Details";
     Layout = "_Layout";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
+    <!-- Tiêu đề -->
+    <h1 class="text-primary text-center mb-4">Patient Details</h1>
 
-<div>
-    <h4>BenhNhan</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Hoten)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Hoten)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Sdt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Sdt)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DiaChi)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cccd)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cccd)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MaBhytNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MaBhytNavigation.MaBhyt)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MaTkNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MaTkNavigation.TenDangNhap)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.MaBn">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <!-- Chi tiết bệnh nhân -->
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Details</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <!-- Họ tên -->
+                <dt class="col-sm-4 font-weight-bold">Name:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Hoten)</dd>
+
+                <!-- Số điện thoại -->
+                <dt class="col-sm-4 font-weight-bold">Phone:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Sdt)</dd>
+
+                <!-- Email -->
+                <dt class="col-sm-4 font-weight-bold">Email:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+                <!-- Địa chỉ -->
+                <dt class="col-sm-4 font-weight-bold">Address:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.DiaChi)</dd>
+
+                <!-- CCCD -->
+                <dt class="col-sm-4 font-weight-bold">Citizen ID:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Cccd)</dd>
+
+                <!-- Mã BHYT -->
+                <dt class="col-sm-4 font-weight-bold">Insurance Code:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.MaBhytNavigation.MaBhyt)</dd>
+
+                <!-- Tài khoản -->
+                <dt class="col-sm-4 font-weight-bold">Account Name:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.MaTkNavigation.TenDangNhap)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- Nút hành động -->
+    <div class="mt-4 d-flex justify-content-between">
+        <a asp-action="Edit" asp-route-id="@Model?.MaBn" class="btn btn-warning">
+            <i class="bi bi-pencil"></i> Edit
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Back to List
+        </a>
+    </div>
 </div>
