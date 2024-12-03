@@ -7,12 +7,12 @@ namespace Register_Patient_Online.Models
     {
         public KhoaKhamBenh()
         {
-            DangKyKhams = new HashSet<DangKyKham>();
+            BacSis = new HashSet<BacSi>();
         }
 
         public string MaKhoa { get; set; } = null!;
         public string TenKhoa { get; set; } = null!;
 
-        public virtual ICollection<DangKyKham> DangKyKhams { get; set; }
+        public virtual ICollection<BacSi> BacSis { get; set; }
     }
 }
