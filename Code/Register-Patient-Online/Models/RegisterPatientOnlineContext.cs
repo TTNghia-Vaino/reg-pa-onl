@@ -31,7 +31,7 @@ namespace Register_Patient_Online.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=LAPTOP-B4QAIC4U\\MSSQLSERVER01;Initial Catalog=RegisterPatientOnline;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+                optionsBuilder.UseSqlServer("Data Source=NGHIA\\SQLEXPRESS;Initial Catalog=RegisterPatientOnline;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
             }
         }
 
