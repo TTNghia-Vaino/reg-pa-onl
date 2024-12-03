@@ -1,0 +1,117 @@
+﻿@page
+
+<h1 class="page-title">TIN TỨC BỆNH VIỆN</h1>
+
+<div class="news-list">
+    <!-- Tin Tức 1 -->
+    <div class="news-item">
+        <h2 class="news-title">Tin Tức 1: Phát hiện chùm 20 ca cúm A/H1N1 tại một trường tiểu học ở TP.HCM</h2>
+        <div class="news-image">
+            <img src="https://bvbnd.vn/wp-content/uploads/2023/03/news-167948978023517e891f-16794972627541842021999.png" alt="Cập Nhật Dịch Vụ Y Tế" />
+            <p class="image-caption">Ảnh minh họa cho cập nhật dịch vụ y tế tại bệnh viện.</p>
+        </div>
+        <p class="news-summary">SKĐS – 20 học sinh tại Trường Tiểu học Võ Trường Toản đồng loạt xuất hiện các triệu chứng như sốt, ho, đau họng, mệt mỏi, ói, nhiều học sinh có dấu hiệu sốt đến 39℃. Kết quả xét nghiệm cho thấy, 6/6 mẫu có kết quả dương tính với cúm A/H1N1.</p>
+        <a href="/TinTuc/ChiTiet?id=1" class="read-more">Đọc thêm</a>
+    </div>
+
+    <!-- Tin Tức 2 -->
+    <div class="news-item">
+        <h2 class="news-title">Tin Tức 2: Bệnh thủy đậu và các biện pháp phòng ngừa</h2>
+        <div class="news-image">
+            <img src="https://bvbnd.vn/wp-content/uploads/2023/03/cach-phong-va-cham-soc-nguoi-benh-thuy-dau1517270506-16731000686511292673529.jpg" alt="Hoạt Động Chăm Sóc Sức Khỏe Mới" />
+            <p class="image-caption">Chăm sóc sức khỏe cộng đồng tại bệnh viện chúng tôi.</p>
+        </div>
+        <p class="news-summary">SKĐS – Theo Cục Y tế dự phòng, thủy đậu là bệnh lành tính, không có triệu chứng nặng nề ngoài những mụn nước nhưng rất dễ gây nhiễm trùng da nơi mọc mụn nước, có thể dẫn đến nhiễm trùng huyết, viêm não tuy ít xảy ra. Phụ nữ mang thai mắc bệnh thủy đậu sẽ rất nguy hiểm cho thai nhi….</p>
+        <a href="/TinTuc/ChiTiet?id=2" class="read-more">Đọc thêm</a>
+    </div>
+</div>
+
+<style>
+    /* Cấu trúc và phong cách trang chính */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fa;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 2.5em;
+        color: #2c3e50;
+        padding: 20px 0;
+        background-color: #2980b9;
+        color: white;
+        margin: 0;
+    }
+
+    .news-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .news-item {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+    .news-title {
+        font-size: 1.6em;
+        font-weight: bold;
+        color: #34495e;
+        margin: 15px;
+    }
+
+    .news-image img {
+        width: 100%;
+        height: auto;
+        border-bottom: 3px solid #ecf0f1;
+    }
+
+    .image-caption {
+        font-size: 0.9em;
+        color: #7f8c8d;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #ecf0f1;
+    }
+
+    .news-summary {
+        font-size: 1em;
+        color: #2c3e50;
+        padding: 15px;
+        line-height: 1.6;
+    }
+
+    .read-more {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        background-color: #2980b9;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        margin: 15px auto;
+        width: 60%;
+        transition: background-color 0.3s ease;
+    }
+
+        .read-more:hover {
+            background-color: #3498db;
+        }
+
+</style>

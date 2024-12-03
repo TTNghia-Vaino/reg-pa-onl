@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Register_Patient_Online.Models.DangKyKham>
+
+@{
+    ViewData["Title"] = "Danh Sách Đăng Ký Khám";
+}
+
+<h1 class="text-center text-primary my-4">📋 DANH SÁCH ĐĂNG KÝ KHÁM</h1>
+
+<div class="table-responsive shadow-lg p-3 bg-white rounded">
+    <table class="table table-hover table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th class="text-center">Ngày Đến Khám</th>
+                <th class="text-center">Trạng Thái</th>
+                <th class="text-center">Khoa</th>
+                <th class="text-center">Bác Sĩ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-center">@Html.DisplayFor(modelItem => item.NgayDenKham)</td>
+                    <td class="text-center">
+                        <span class="badge @(item.TrangThai == "Chưa Xác Nhận" ? "badge-warning text-dark" :
+                                              item.TrangThai == "Đã Xác Nhận" ? "badge-success text-dark" :
+                                              "badge-secondary text-dark")"
+                              style="font-size: 0.9rem; padding: 8px 12px;">
+                            @Html.DisplayFor(modelItem => item.TrangThai)
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        @if (item.MaBsNavigation != null && item.MaBsNavigation.MaKhoaNavigation != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.MaBsNavigation.MaKhoaNavigation.TenKhoa)
+                        }
+                        else
+                        {
+                            <span class="text-muted">Không có dữ liệu</span>
+                        }
+                    </td>
+                    <td class="text-center">
+                        @if (item.MaBsNavigation != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.MaBsNavigation.Ten)
+                        }
+                        else
+                        {
+                            <span class="text-muted">Không có dữ liệu</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center mt-4">
+    <form asp-action="Create" method="get" style="display:inline;">
+        <button type="submit" class="btn btn-primary btn-lg shadow">
+            <i class="fas fa-plus-circle"></i> Đăng Ký Khám
+        </button>
+    </form>
+</div>
+
+<!-- Include Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />

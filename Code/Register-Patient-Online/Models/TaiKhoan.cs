@@ -10,6 +10,7 @@ namespace Register_Patient_Online.Models
         public string MatKhau { get; set; } = null!;
         public int Role { get; set; }
 
+        public virtual BacSi? BacSi { get; set; }
         public virtual BenhNhan? BenhNhan { get; set; }
         public virtual QuanLy? QuanLy { get; set; }
     }
