@@ -1,0 +1,95 @@
+﻿@model Register_Patient_Online.Models.BenhNhan
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>BenhNhan</h4>
+<hr />
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Chỉnh Sửa Thông Tin Người Dùng</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="MaBn" />
+
+                <dl class="row">
+                    <!-- Tên Đăng Nhập (Hiển thị, không chỉnh sửa) -->
+                    <dt class="col-sm-4 fw-bold text-secondary">Tên Đăng Nhập:</dt>
+                    <dd class="col-sm-8">
+                        <input type="hidden" asp-for="MaTk" />
+                        @Html.DisplayFor(model => model.MaTkNavigation.TenDangNhap)
+                    </dd>
+
+                    <!-- Họ Và Tên (Chỉnh sửa) -->
+                    <dt class="col-sm-4 fw-bold text-secondary">Họ Và Tên:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="Hoten" class="form-control" />
+                        <span asp-validation-for="Hoten" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Số Điện Thoại (Chỉnh sửa) -->
+                    <dt class="col-sm-4 fw-bold text-secondary">Số Điện Thoại:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="Sdt" class="form-control" />
+                        <span asp-validation-for="Sdt" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Email (Chỉnh sửa) -->
+                    <dt class="col-sm-4 fw-bold text-secondary">Email:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Địa Chỉ (Chỉnh sửa) -->
+                    <dt class="col-sm-4 fw-bold text-secondary">Địa Chỉ:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="DiaChi" class="form-control" />
+                        <span asp-validation-for="DiaChi" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Số CCCD (Chỉnh sửa) -->
+                    <dt class="col-sm-4 fw-bold text-secondary">Số CCCD:</dt>
+                    <dd class="col-sm-8">
+                        <input asp-for="Cccd" class="form-control" />
+                        <span asp-validation-for="Cccd" class="text-danger"></span>
+                    </dd>
+
+                    <!-- Mã BHYT (Hiển thị, không chỉnh sửa) -->
+                    <dt class="col-sm-4 fw-bold text-secondary">Mã BHYT:</dt>
+                    <dd class="col-sm-8">
+                        <div class="input-group">
+                            <input type="hidden" asp-for="MaBhyt" />
+                            @Html.DisplayFor(model => model.MaBhytNavigation.MaBhyt)
+                            <div class="input-group-append ms-3">
+                                <a href="@Url.Action("Edit", "BaoHiemYTes", new { id = Model.MaBhyt })" class="btn btn-warning">Chỉnh Sửa BHYT</a>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+
+                <!-- Save Button -->
+                <div class="form-group text-end mt-4">
+                    <input type="submit" value="Lưu" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,76 @@
+﻿@model Register_Patient_Online.Models.BenhNhan
+
+@{
+    ViewData["Title"] = "Thông Tin Người Dùng";
+}
+
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Thông Tin Người Dùng</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Họ Và Tên:
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Hoten)
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Số Điện Thoại:
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Sdt)
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Email:
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Địa Chỉ:
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.DiaChi)
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Số CCCD:
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Cccd)
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Mã BHYT:
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.MaBhytNavigation.MaBhyt)
+                </dd>
+
+                <dt class="col-sm-4 fw-bold text-secondary">
+                    Tên Đăng Nhập:
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.MaTkNavigation.TenDangNhap)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center">
+            <a class="btn btn-warning me-2" asp-action="Edit" asp-route-id="@Model?.MaBn">
+                <i class="fas fa-edit"></i> Chỉnh Sửa Thông Tin Cá Nhân
+            </a>
+            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Index">
+                <i class="fas fa-home"></i> Quay Về Trang Chủ
+            </a>
+        </div>
+    </div>
+</div>
+
