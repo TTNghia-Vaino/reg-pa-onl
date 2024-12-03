@@ -66,18 +66,28 @@
                     <dd class="col-sm-8">
                         <div class="input-group">
                             <input type="hidden" asp-for="MaBhyt" />
-                            @Html.DisplayFor(model => model.MaBhytNavigation.MaBhyt)
-                            <div class="input-group-append ms-3">
-                                <a href="@Url.Action("Edit", "BaoHiemYTes", new { id = Model.MaBhyt })" class="btn btn-warning">Chỉnh Sửa BHYT</a>
-                            </div>
+                            @if (Model.MaBhyt != null)
+                            {
+                                @Html.DisplayFor(model => model.MaBhytNavigation.MaBhyt)
+                                <div class="input-group-append ms-3">
+                                    <a href="@Url.Action("Edit", "BaoHiemYTes", new { id = Model.MaBhyt })" class="btn btn-warning">Chỉnh Sửa BHYT</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="input-group-append ms-3">
+                                    <a href="@Url.Action("Create", "BaoHiemYTes")" class="btn btn-success">Bạn chưa có BHYT. Cập nhật?</a>
+                                </div>
+                            }
                         </div>
+
                     </dd>
                 </dl>
 
                 <!-- Save Button -->
                 <div class="form-group text-end mt-4">
                     <input type="submit" value="Lưu" class="btn btn-primary" />
-                    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Hủy</a>
                 </div>
             </form>
         </div>
