@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Register_Patient_Online.ViewModels.HistoryViewModel>
+
+@{
+    ViewData["Title"] = "Patient History";
+}
+
+<div class="container mt-5">
+    <h1 class="text-primary">Lịch Sử Bệnh Án</h1>
+    <p class="text-secondary">Danh sách lịch sử khám bệnh của bệnh nhân.</p>
+
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Tên Bệnh Nhân</th>
+                <th>Mô Tả Bệnh Án</th>
+                <th>Giờ Khám</th>
+                <th>Ngày Khám</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TenBenhNhan</td>
+                    <td>@item.MoTaBenhAn</td>
+                    <td>@item.GioKham.ToString(@"hh\:mm")</td>
+                    <td>@item.NgayKham.ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Back to List
+    </a>
+</div>

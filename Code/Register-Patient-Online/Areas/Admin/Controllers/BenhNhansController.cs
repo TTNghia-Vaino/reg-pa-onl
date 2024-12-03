@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Register_Patient_Online.Models;
+using Register_Patient_Online.ViewModels;
 
 namespace Register_Patient_Online.Areas.Admin.Controllers
 {
@@ -165,6 +166,36 @@ namespace Register_Patient_Online.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        // GET: Admin/BenhNhans/History/5
+        public async Task<IActionResult> History(string id)
+        {
+            if (id == null || _context.BenhNhans == null)
+            {
+                return NotFound();
+            }
+
+            // Lấy lịch sử khám bệnh từ cơ sở dữ liệu
+            var history = await _context.LichSuKhams
+                .Include(h => h.BenhNhan)
+                .Where(h => h.MaBn == id)
+                .Select(h => new HistoryViewModel
+                {
+                    MaBn = h.MaBn,
+                    TenBenhNhan = h.BenhNhan.Hoten,
+                    MoTaBenhAn = h.MoTaBenhAn,
+                    NgayKham = h.NgayKham,
+                    BacSi = h.BacSi
+                })
+                .ToListAsync();
+
+            if (history == null || !history.Any())
+            {
+                return NotFound("Không có lịch sử khám bệnh nào cho bệnh nhân này.");
+            }
+
+            return View(history);
+        }
+
 
         private bool BenhNhanExists(string id)
         {

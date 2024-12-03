@@ -1,66 +1,76 @@
 ﻿@model Register_Patient_Online.Models.BenhNhan
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo Mới Bệnh Nhân";
 }
-
-<h1>Create</h1>
-
-<h4>BenhNhan</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="col-md-6 bg-light shadow p-4 rounded">
+        <h1 class="text-center text-primary mb-4">Tạo Mới Bệnh Nhân</h1>
+        <p class="text-center text-muted mb-4">Vui lòng điền đầy đủ thông tin bên dưới để tiếp tục.</p>
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="MaBn" class="control-label"></label>
-                <input asp-for="MaBn" class="form-control" />
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="form-group mb-4">
+                <label asp-for="MaBn" class="form-label">Mã Bệnh Nhân</label>
+                <input asp-for="MaBn" class="form-control" placeholder="Nhập mã bệnh nhân" />
                 <span asp-validation-for="MaBn" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MaTk" class="control-label"></label>
-                <select asp-for="MaTk" class ="form-control" asp-items="ViewBag.MaTk"></select>
+
+            <div class="form-group mb-4">
+                <label asp-for="MaTk" class="form-label">Tài Khoản</label>
+                <select asp-for="MaTk" class="form-select" asp-items="ViewBag.MaTk">
+                    <option value="">Chọn tài khoản...</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label asp-for="Hoten" class="control-label"></label>
-                <input asp-for="Hoten" class="form-control" />
+
+            <div class="form-group mb-4">
+                <label asp-for="Hoten" class="form-label">Họ Tên</label>
+                <input asp-for="Hoten" class="form-control" placeholder="Nhập họ tên đầy đủ" />
                 <span asp-validation-for="Hoten" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Sdt" class="control-label"></label>
-                <input asp-for="Sdt" class="form-control" />
+
+            <div class="form-group mb-4">
+                <label asp-for="Sdt" class="form-label">Số Điện Thoại</label>
+                <input asp-for="Sdt" class="form-control" placeholder="Nhập số điện thoại" />
                 <span asp-validation-for="Sdt" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+
+            <div class="form-group mb-4">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="Nhập email" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DiaChi" class="control-label"></label>
-                <input asp-for="DiaChi" class="form-control" />
+
+            <div class="form-group mb-4">
+                <label asp-for="DiaChi" class="form-label">Địa Chỉ</label>
+                <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ" />
                 <span asp-validation-for="DiaChi" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Cccd" class="control-label"></label>
-                <input asp-for="Cccd" class="form-control" />
+
+            <div class="form-group mb-4">
+                <label asp-for="Cccd" class="form-label">Căn Cước Công Dân</label>
+                <input asp-for="Cccd" class="form-control" placeholder="Nhập CCCD" />
                 <span asp-validation-for="Cccd" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MaBhyt" class="control-label"></label>
-                <select asp-for="MaBhyt" class ="form-control" asp-items="ViewBag.MaBhyt"></select>
+
+            <div class="form-group mb-4">
+                <label asp-for="MaBhyt" class="form-label">Mã Bảo Hiểm Y Tế</label>
+                <select asp-for="MaBhyt" class="form-select" asp-items="ViewBag.MaBhyt">
+                    <option value="">Chọn mã BHYT...</option>
+                </select>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-outline-secondary">Quay Lại</a>
+                <button type="submit" class="btn btn-primary">Tạo Mới</button>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

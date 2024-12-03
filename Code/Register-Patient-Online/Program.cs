@@ -1,4 +1,6 @@
 global using Register_Patient_Online.Models;
+global using Register_Patient_Online.ViewModels;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
