@@ -12,22 +12,43 @@
             <tr>
                 <th class="text-center">Ngày Đến Khám</th>
                 <th class="text-center">Trạng Thái</th>
-                <th class="text-center">Tên Khoa<th>
+                <th class="text-center">Khoa</th>
+                <th class="text-center">Bác Sĩ</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr> 
+                <tr>
                     <td class="text-center">@Html.DisplayFor(modelItem => item.NgayDenKham)</td>
                     <td class="text-center">
-                        <span class="badge @(item.TrangThai == "Chưa Xác Nhận" ? "badge-warning text-dark" : item.TrangThai == "Đã Xác Nhận" ? "badge-success text-dark" : "badge-secondary text-dark")"
+                        <span class="badge @(item.TrangThai == "Chưa Xác Nhận" ? "badge-warning text-dark" :
+                                              item.TrangThai == "Đã Xác Nhận" ? "badge-success text-dark" :
+                                              "badge-secondary text-dark")"
                               style="font-size: 0.9rem; padding: 8px 12px;">
                             @Html.DisplayFor(modelItem => item.TrangThai)
                         </span>
                     </td>
-
-                    <td class="text-center">@Html.DisplayFor(modelItem => item.MaKhoaNavigation.MaKhoa)</td>
+                    <td class="text-center">
+                        @if (item.MaBsNavigation != null && item.MaBsNavigation.MaKhoaNavigation != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.MaBsNavigation.MaKhoaNavigation.TenKhoa)
+                        }
+                        else
+                        {
+                            <span class="text-muted">Không có dữ liệu</span>
+                        }
+                    </td>
+                    <td class="text-center">
+                        @if (item.MaBsNavigation != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.MaBsNavigation.Ten)
+                        }
+                        else
+                        {
+                            <span class="text-muted">Không có dữ liệu</span>
+                        }
+                    </td>
                 </tr>
             }
         </tbody>
@@ -41,7 +62,6 @@
         </button>
     </form>
 </div>
-
 
 <!-- Include Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />

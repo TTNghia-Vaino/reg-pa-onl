@@ -1,10 +1,9 @@
-﻿@model Register_Patient_Online.Models.DangKyKham
+﻿@model Register_Patient_Online.Models.DangKyKham 
 
 @{
     ViewData["Title"] = "Create";
-    var user = Context.Session.GetString("UserName");
-    <!--Tim MaBn cua BenhNhan co NaTknavigation.TenDangNhap = user-->
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <h1 class="text-center text-primary my-4">📋 ĐĂNG KÍ KHÁM BỆNH</h1>
 
@@ -12,32 +11,60 @@
 
 <div class="row justify-content-center">
     <div class="col-lg-6 col-md-8 col-sm-12 shadow-lg p-4 rounded bg-light">
-        <form asp-action="Create">
+        <form asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="alert alert-danger" style="display: none;"></div>
 
-            <!-- Ngày Đến Khám -->
+            <!-- Ngày Đến Khám send to Controller and GetBacSi  -->
             <div class="form-group mb-4">
                 <label asp-for="NgayDenKham" class="form-label text-dark">Ngày Đến Khám</label>
-                <input asp-for="NgayDenKham" class="form-control" placeholder="Nhập ngày đến khám" />
+                <input asp-for="NgayDenKham" id="NgayDenKham" class="form-control" type="date" placeholder="Nhập ngày đến khám" />
                 <span asp-validation-for="NgayDenKham" class="text-danger small"></span>
             </div>
 
-            <!-- Tên Khoa -->
+            <!-- Ca Đăng Ký send to controller and GetBacSi-->
             <div class="form-group mb-4">
-                <label asp-for="MaKhoa" class="form-label text-dark">Tên Khoa</label>
-                <select asp-for="MaKhoa" class="form-control form-select" asp-items="ViewBag.TenKhoa">
-                    <option value="" disabled selected>Chọn tên khoa</option>
+                <label asp-for="CaDangKi" class="form-label text-dark">Ca Đăng Ký</label>
+                <select asp-for="CaDangKi" id="CaDangKi" class="form-control">
+                    <option value="1">Ca Sáng (8h - 11h30)</option>
+                    <option value="2">Ca Chiều (14h - 17h)</option>
                 </select>
-                <span asp-validation-for="MaKhoa" class="text-danger small"></span>
+                <span asp-validation-for="CaDangKi" class="text-danger small"></span>
+            </div>
+            <!-- Tên Khoa  just Send to GetBacsi -->
+            <div class="form-group mb-4">
+                <label class="form-label text-dark">Tên Khoa</label>
+                <select id="khoaDropdown" class="form-control form-select">
+                    <option value="" disabled selected>Chọn tên khoa</option>
+                    @foreach (var khoa in ViewBag.ListKhoa)
+                    {
+                        <option value="@khoa.MaKhoa">@khoa.TenKhoa</option>
+                    }
+                </select>
             </div>
 
-            <!-- Nút Đăng Ký -->
+            <!-- Button Tìm Bác Sĩ -->
+            <div class="form-group text-center">
+                <button type="button" id="btnTimBacSi" class="btn btn-info btn-lg w-100">
+                    <i class="fas fa-search"></i> Tìm Bác Sĩ
+                </button>
+            </div>
+
+            <!-- Bác Sĩ -->
+            <div class="form-group mb-4">
+                <label asp-for="MaBs" class="form-label text-dark">Bác Sĩ</label>
+                <select id="bacSiDropdown" name="MaBs" class="form-control">
+                    <option value="" disabled selected>Chọn bác sĩ</option>
+                </select>
+                <span asp-validation-for="MaBs" class="text-danger small"></span>
+            </div>
+
             <div class="form-group text-center mt-4">
                 <button type="submit" class="btn btn-primary btn-lg shadow-lg w-100">
                     <i class="fas fa-clipboard-check"></i> Đăng Ký
                 </button>
             </div>
         </form>
+
     </div>
 </div>
 
@@ -46,6 +73,48 @@
         <i class="fas fa-arrow-left"></i> Quay Lại
     </a>
 </div>
+
+<script>
+    $(document).ready(function () {
+        // Lắng nghe sự kiện click vào nút "Tìm Bác Sĩ"
+        $('#btnTimBacSi').on('click', function () {
+            var maKhoa = $('#khoaDropdown').val();
+            var ngayDenKham = $('#NgayDenKham').val();
+            var caDangKi = $('#CaDangKi').val();
+
+            // Kiểm tra nếu tất cả các trường đã được chọn
+            if (maKhoa && ngayDenKham && caDangKi) {
+                // Gửi request AJAX
+                $.ajax({
+                    url: '@Url.Action("GetBacSi", "DangKyKhams")', // Action trong Controller
+                    type: 'GET', // Phương thức GET
+                    data: { // Dữ liệu gửi đến Controller
+                        maKhoa: maKhoa,
+                        ngayDenKham: ngayDenKham,
+                        caDangKi: caDangKi
+                    },
+                    success: function (data) {
+                        // Xử lý dữ liệu trả về từ server
+                        var $bacSiDropdown = $('#bacSiDropdown');
+                        $bacSiDropdown.empty().append('<option value="" disabled selected>Chọn bác sĩ</option>');
+
+                        // Lặp qua danh sách bác sĩ và thêm vào dropdown
+                        $.each(data, function (i, item) {
+                            $bacSiDropdown.append(`<option value="${item.maBs}">${item.ten}</option>`);
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        // Xử lý lỗi nếu có
+                        alert("Đã xảy ra lỗi khi tải danh sách bác sĩ: " + error);
+                    }
+                });
+            } else {
+                alert("Vui lòng chọn tất cả các trường trước khi tìm bác sĩ.");
+            }
+        });
+    });
+</script>
+
 
 <!-- Include Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />

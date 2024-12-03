@@ -21,9 +21,19 @@ namespace Register_Patient_Online.Controllers
         // GET: DangKyKhams
         public async Task<IActionResult> Index()
         {
-            var registerPatientOnlineContext = _context.DangKyKhams.Include(d => d.MaBnNavigation).Include(d => d.MaKhoaNavigation);
+            // Lấy thông tin người dùng đang đăng nhập
+            var user = HttpContext.Session.GetString("UserName");
+
+            // Lọc danh sách DangKyKhams cho tài khoản hiện tại
+            var registerPatientOnlineContext = _context.DangKyKhams
+                .Where(d => d.MaBnNavigation.MaTkNavigation.TenDangNhap == user)
+                .Include(d => d.MaBnNavigation)
+                .Include(d => d.MaBsNavigation)
+                .Include(d => d.MaBsNavigation.MaKhoaNavigation);
+
             return View(await registerPatientOnlineContext.ToListAsync());
         }
+
 
         // GET: DangKyKhams/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -35,7 +45,7 @@ namespace Register_Patient_Online.Controllers
 
             var dangKyKham = await _context.DangKyKhams
                 .Include(d => d.MaBnNavigation)
-                .Include(d => d.MaKhoaNavigation)
+                .Include(d => d.MaBsNavigation)
                 .FirstOrDefaultAsync(m => m.MaDk == id);
             if (dangKyKham == null)
             {
@@ -48,25 +58,56 @@ namespace Register_Patient_Online.Controllers
         // GET: DangKyKhams/Create
         public IActionResult Create()
         {
-            ViewBag.TenKhoa = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "TenKhoa");
+            var listKhoa = _context.KhoaKhamBenhs.ToList();  // Đảm bảo đây không phải là null
+            ViewBag.ListKhoa = listKhoa;
+
             return View();
         }
+        // Lấy danh sách bác sĩ theo Khoa, Ngày đến khám, và Ca đăng ký
+        [HttpGet]
+        public JsonResult GetBacSi(string maKhoa, string ngayDenKham, string caDangKi)
+        {
+            var bacSiList = _context.BacSis
+                                    .Where(b => b.MaKhoa == maKhoa)
+                                    .Join(_context.LichLamViecs,
+                                          b => b.MaBs,
+                                          l => l.MaBs,
+                                          (b, l) => new { b.MaBs, b.Ten, l.Ngay, l.CaLamViec })
+                                    .Where(b => b.Ngay == DateTime.Parse(ngayDenKham) && b.CaLamViec == caDangKi)
+                                    .Select(b => new { b.MaBs, b.Ten })
+                                    .ToList();
+            var json_bslist = Json(bacSiList);
+            return Json(bacSiList);
+        }
 
-        // POST: DangKyKhams/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NgayDenKham,MaKhoa,TrangThai")] DangKyKham dangKyKham)
+        public async Task<IActionResult> Create([Bind("MaBs,NgayDenKham,CaDangKi")] DangKyKham dangKyKham)
         {
-            if (ModelState.IsValid)
+            // Lấy thông tin bệnh nhân từ Session
+            var user = HttpContext.Session.GetString("UserName");
+            if (string.IsNullOrEmpty(user))
             {
-                _context.Add(dangKyKham);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Login", "Account"); // Chuyển hướng nếu chưa đăng nhập
             }
-            ViewBag.TenKhoa = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "TenKhoa", dangKyKham.MaKhoa);
-            return View(dangKyKham);
+
+            // Lấy MaBn từ database dựa trên UserName
+            var benhNhan = _context.BenhNhans.FirstOrDefault(bn => bn.MaTkNavigation.TenDangNhap == user);
+            if (benhNhan == null)
+            {
+                return NotFound("Không tìm thấy thông tin bệnh nhân.");
+            }
+
+            // Gán giá trị mặc định
+            dangKyKham.MaBn = benhNhan.MaBn;
+            dangKyKham.NgayDangKi = DateTime.Now;
+            dangKyKham.TrangThai = "CHỜ XÁC NHẬN";
+
+            _context.Add(dangKyKham);
+            await _context.SaveChangesAsync();
+
+            ViewBag.ListKhoa = _context.KhoaKhamBenhs.ToList();
+            return RedirectToAction("Index", "DangKyKhams");
         }
 
         // GET: DangKyKhams/Edit/5
@@ -82,7 +123,8 @@ namespace Register_Patient_Online.Controllers
             {
                 return NotFound();
             }
-            ViewData["MaKhoa"] = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "MaKhoa", dangKyKham.MaKhoa);
+            ViewData["MaBn"] = new SelectList(_context.BenhNhans, "MaBn", "MaBn", dangKyKham.MaBn);
+            ViewData["MaBs"] = new SelectList(_context.BacSis, "MaBs", "MaBs", dangKyKham.MaBs);
             return View(dangKyKham);
         }
 
@@ -91,7 +133,7 @@ namespace Register_Patient_Online.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MaDk,MaBn,NgayDangKi,NgayDenKham,MaKhoa,TrangThai")] DangKyKham dangKyKham)
+        public async Task<IActionResult> Edit(int id, [Bind("MaDk,MaBn,MaBs,NgayDangKi,NgayDenKham,TrangThai")] DangKyKham dangKyKham)
         {
             if (id != dangKyKham.MaDk)
             {
@@ -119,7 +161,7 @@ namespace Register_Patient_Online.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["MaBn"] = new SelectList(_context.BenhNhans, "MaBn", "MaBn", dangKyKham.MaBn);
-            ViewData["MaKhoa"] = new SelectList(_context.KhoaKhamBenhs, "MaKhoa", "MaKhoa", dangKyKham.MaKhoa);
+            ViewData["MaBs"] = new SelectList(_context.BacSis, "MaBs", "MaBs", dangKyKham.MaBs);
             return View(dangKyKham);
         }
 
@@ -133,7 +175,7 @@ namespace Register_Patient_Online.Controllers
 
             var dangKyKham = await _context.DangKyKhams
                 .Include(d => d.MaBnNavigation)
-                .Include(d => d.MaKhoaNavigation)
+                .Include(d => d.MaBsNavigation)
                 .FirstOrDefaultAsync(m => m.MaDk == id);
             if (dangKyKham == null)
             {
