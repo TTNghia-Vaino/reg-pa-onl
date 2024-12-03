@@ -10,6 +10,7 @@ namespace Register_Patient_Online.Models
         public string MaBs { get; set; } = null!;
         public DateTime NgayDangKi { get; set; }
         public DateTime NgayDenKham { get; set; }
+        public string CaDangKi { get; set; } = null!;
         public string? TrangThai { get; set; }
 
         public virtual BenhNhan MaBnNavigation { get; set; } = null!;

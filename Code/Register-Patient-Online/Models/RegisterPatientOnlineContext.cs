@@ -40,11 +40,11 @@ namespace Register_Patient_Online.Models
             modelBuilder.Entity<BacSi>(entity =>
             {
                 entity.HasKey(e => e.MaBs)
-                    .HasName("PK__BAC_SI__53E64EC99B59EB88");
+                    .HasName("PK__BAC_SI__53E64EC903637F04");
 
                 entity.ToTable("BAC_SI");
 
-                entity.HasIndex(e => e.MaTk, "UQ__BAC_SI__53E1C493373E7D50")
+                entity.HasIndex(e => e.MaTk, "UQ__BAC_SI__53E1C493D6BBE3D6")
                     .IsUnique();
 
                 entity.Property(e => e.MaBs)
@@ -77,7 +77,7 @@ namespace Register_Patient_Online.Models
             modelBuilder.Entity<BaoHiemYTe>(entity =>
             {
                 entity.HasKey(e => e.MaBhyt)
-                    .HasName("PK__BAO_HIEM__6B0F5FC2563E692F");
+                    .HasName("PK__BAO_HIEM__6B0F5FC23CF8E590");
 
                 entity.ToTable("BAO_HIEM_Y_TE");
 
@@ -103,14 +103,14 @@ namespace Register_Patient_Online.Models
             modelBuilder.Entity<BenhNhan>(entity =>
             {
                 entity.HasKey(e => e.MaBn)
-                    .HasName("PK__BENH_NHA__53E64ECE9AD19C13");
+                    .HasName("PK__BENH_NHA__53E64ECE10244082");
 
                 entity.ToTable("BENH_NHAN");
 
-                entity.HasIndex(e => e.MaTk, "UQ__BENH_NHA__53E1C4938E3ADDEB")
+                entity.HasIndex(e => e.MaTk, "UQ__BENH_NHA__53E1C493F459889A")
                     .IsUnique();
 
-                entity.HasIndex(e => e.MaBhyt, "UQ__BENH_NHA__6B0F5FC3A3FFED80")
+                entity.HasIndex(e => e.MaBhyt, "UQ__BENH_NHA__6B0F5FC32AE96F94")
                     .IsUnique();
 
                 entity.Property(e => e.MaBn)
@@ -159,11 +159,15 @@ namespace Register_Patient_Online.Models
             modelBuilder.Entity<DangKyKham>(entity =>
             {
                 entity.HasKey(e => e.MaDk)
-                    .HasName("PK__DANG_KY___53E15A86FD2BE639");
+                    .HasName("PK__DANG_KY___53E15A8699EB33DE");
 
                 entity.ToTable("DANG_KY_KHAM");
 
                 entity.Property(e => e.MaDk).HasColumnName("MA_DK");
+
+                entity.Property(e => e.CaDangKi)
+                    .HasMaxLength(20)
+                    .HasColumnName("CA_DANG_KI");
 
                 entity.Property(e => e.MaBn)
                     .HasMaxLength(100)
@@ -201,7 +205,7 @@ namespace Register_Patient_Online.Models
             modelBuilder.Entity<KhoaKhamBenh>(entity =>
             {
                 entity.HasKey(e => e.MaKhoa)
-                    .HasName("PK__KHOA_KHA__65A8F1620FE48049");
+                    .HasName("PK__KHOA_KHA__65A8F16290FBEC5E");
 
                 entity.ToTable("KHOA_KHAM_BENH");
 
@@ -217,7 +221,7 @@ namespace Register_Patient_Online.Models
             modelBuilder.Entity<LichLamViec>(entity =>
             {
                 entity.HasKey(e => new { e.MaBs, e.Ngay, e.CaLamViec })
-                    .HasName("PK__LICH_LAM__5AF2CD07D5F4920E");
+                    .HasName("PK__LICH_LAM__5AF2CD07078B926F");
 
                 entity.ToTable("LICH_LAM_VIEC");
 
@@ -242,11 +246,11 @@ namespace Register_Patient_Online.Models
             modelBuilder.Entity<QuanLy>(entity =>
             {
                 entity.HasKey(e => e.MaQl)
-                    .HasName("PK__QUAN_LY__53E6F167EF9E0FF4");
+                    .HasName("PK__QUAN_LY__53E6F16790F05848");
 
                 entity.ToTable("QUAN_LY");
 
-                entity.HasIndex(e => e.MaTk, "UQ__QUAN_LY__53E1C493A92ADAAF")
+                entity.HasIndex(e => e.MaTk, "UQ__QUAN_LY__53E1C493CC9BFB5E")
                     .IsUnique();
 
                 entity.Property(e => e.MaQl).HasColumnName("MA_QL");
@@ -275,11 +279,11 @@ namespace Register_Patient_Online.Models
             modelBuilder.Entity<TaiKhoan>(entity =>
             {
                 entity.HasKey(e => e.MaTk)
-                    .HasName("PK__TAI_KHOA__53E1C492B1E6CD17");
+                    .HasName("PK__TAI_KHOA__53E1C4927FA216F2");
 
                 entity.ToTable("TAI_KHOAN");
 
-                entity.HasIndex(e => e.TenDangNhap, "UQ__TAI_KHOA__7C8CF1DF030CF4FB")
+                entity.HasIndex(e => e.TenDangNhap, "UQ__TAI_KHOA__7C8CF1DF07CFEEB8")
                     .IsUnique();
 
                 entity.Property(e => e.MaTk).HasColumnName("MA_TK");
@@ -298,7 +302,7 @@ namespace Register_Patient_Online.Models
             modelBuilder.Entity<TinTuc>(entity =>
             {
                 entity.HasKey(e => e.MaTinTuc)
-                    .HasName("PK__TIN_TUC__3E4147BA3FCA380D");
+                    .HasName("PK__TIN_TUC__3E4147BA68452418");
 
                 entity.ToTable("TIN_TUC");
 
